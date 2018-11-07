@@ -2,6 +2,21 @@ import storageService from '../../services/storage.service.js'
 import utilService from '../../services/util.service.js'
 
 
+const KEY = 'notesAppKey';
+
+function query(filter = null) {
+    return storageService.load(KEY)
+        .then(notes => {
+            if (!notes || !notes.length) {
+                notes = _createInitialNotes();
+                storageService.store(KEY, notes);
+            }
+            console.log('Notes: ', notes);
+            return notes;
+        })
+}
+
+
 function saveNote(note) {
     return storageService.load(KEY)
         .then(notes => {
@@ -35,10 +50,27 @@ function getById(noteId) {
         })
 }
 
+function _createInitialNotes() {
+    return [_createInitialNote(), _createInitialNote(), _createInitialNote(), _createInitialNote()];
+}
+
+
+function _createInitialNote() {
+    return {
+        id: utilService.makeId(),
+        title: utilService.makeLorem(3),
+        body: utilService.makeLorem(50),
+        // isRead: false,
+        
+       
+    }
+
+}
+
 
 
 export default {
-    // query,
+    query,
     getById,
     deleteNote,
     saveNote

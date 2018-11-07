@@ -14,7 +14,11 @@ export default {
 
     data() {
         return {
-            note: {txt: ''}
+            note: {
+                title: '',
+                body: ''
+            }
+
         }
     },
 
