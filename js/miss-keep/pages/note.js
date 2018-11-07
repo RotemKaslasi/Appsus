@@ -1,32 +1,31 @@
-import carList from '../../cmps/car/car-list.js'
+import noteList from '../cmps/notes/note-list.js'
 
 export default {
     template: `
-        <section class="car">
-            <h1>Cars App</h1>
-            <router-link to="/car/edit">New Car</router-link> 
-            <car-filter @filtered="setFilter"></car-filter>
-            <car-list :cars="cars"></car-list>
+        <section class="note">
+            <h1>Notes App</h1>
+            <router-link to="/note/edit">New Note</router-link> 
+            <note-list :notes="notes"></note-list>
         </section>
     `,
     data() {
         return {
-            cars: []
+            notes: []
         }
     },
     created() {
-        carService.query()
-            .then(cars => this.cars = cars)
+        noteService.query()
+            .then(notes => this.notes = notes)
     },
     methods: {
-        setFilter(filter) {
-            carService.query(filter)
-            .then(cars => this.cars = cars)
-        }
+        // setFilter(filter) {
+        //     carService.query(filter)
+        //     .then(cars => this.cars = cars)
+        // }
     },
     
     components: {
-        carList,
-        carFilter
+        noteList,
+        // carFilter
     }
 }
