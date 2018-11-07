@@ -62,6 +62,7 @@ function _createInitialNote() {
         id: utilService.makeId(),
         title: utilService.makeLorem(3),
         body: utilService.makeLorem(50),
+        background : null
         // isRead: false,
         
        
