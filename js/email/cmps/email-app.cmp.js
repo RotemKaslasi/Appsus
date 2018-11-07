@@ -10,10 +10,10 @@ export default {
     <section class="email-app-container">
         <h1 class="email-top-title">Email App</h1>
             <email-filter @set-filter="setFilter"></email-filter>
+            <button class="add-email-btn" @click="addEmail"><img class="add-email-img" src="img/add-email.png" alt="" srcset=""></button>
             <div class="edit-email-container">
                 <email-list  :emails="emailsForDisplay"></email-list>
                 <email-compose  v-if="isAddEmail" @save-email="saveEmail"></email-compose>
-                <button @click="addEmail">add</button>
             </div>
             <!-- <email-status :status="status"></email-status> -->
     </section>
@@ -46,7 +46,7 @@ export default {
             }
             console.log(this.emails)
             return this.emails
-                .filter(email => 
+                .filter(email =>
                     !this.filter.txt || email.subject.toLowerCase().includes(this.filter.txt.toLowerCase()))
 
         }
@@ -64,13 +64,14 @@ export default {
             })
         },
         setFilter(filter) {
-            console.log('filter',this.filter)
+            console.log('filter', this.filter)
             this.filter = filter;
         },
         addEmail() {
             this.isAddEmail = !this.isAddEmail;
         },
         saveEmail(newEmail) {
+            this.isAddEmail = false;
             servicesEmail.saveEmail(newEmail).then(() => {
                 this.loadEmails()
             })
