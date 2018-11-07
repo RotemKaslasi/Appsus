@@ -3,12 +3,13 @@ import busService, {USR_MSG_DISPLAY} from '../../../services/event-bus.service.j
 
 
 export default {
+
     template: `
         <section class="note-details-container">
             <div class="note-details">
             <h1>{{note.title}}</h1>
             <h4>{{note.body}}</h4>
-            <!-- <h1>{{note.title}}</h1> -->
+            
             </div>
             
             <button @click="deleteNote">Delete</button>
