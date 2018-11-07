@@ -1,15 +1,23 @@
 .email-app-container{
-    width: 100vw;
-    margin:  10px auto;
-    border: 1px solid;
+    height: 100vh;
+    /* margin:  10px auto; */
+    background: url('../../img/back-email.jpg') no-repeat center fixed;
+    background-size: cover;
+}
+
+.email-top-title{
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Righteous', cursive;
+    padding: 20px;
 }
 
 .edit-email-container{
     display: flex;
 }
-@media(max-width:600px){
-.email-app-container{
-
+@media(max-width:800px){
+.edit-email-container{
+    flex-direction: column;
 }
 }
 

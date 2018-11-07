@@ -9,7 +9,7 @@ export default {
                 <img src="img/close.png" v-else>
                 <div class="email-text">
                     <h1>{{email.subject}}</h1>
-                    <p>{{email.body.slice(0,30)}}...</p>
+                    <p>{{email.body.slice(0,100)}}...</p>
                 </div>
             </li>
         </router-link>
