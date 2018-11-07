@@ -2,7 +2,7 @@
 export default {
     props:['email'],
     template:`
-    <section>
+    <section class="details-container">
         <h1>Details</h1>
     </section>
     `

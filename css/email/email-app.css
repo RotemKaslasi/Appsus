@@ -1,5 +1,15 @@
 .email-app-container{
+    height: 500px;
+    width: 90vw;
+    margin:  10px auto;
+    border: 1px solid;
     display: flex;
     justify-content: space-between;
-    
 }
+
+@media(max-width:600px){
+.email-app-container{
+    flex-direction:column;
+}
+}
+
