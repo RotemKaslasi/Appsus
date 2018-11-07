@@ -1,0 +1,11 @@
+.status-container{
+    width: 90%;
+    background-color: wheat;
+    margin: 0 auto;
+    padding: 10px;
+}
+.status{
+    width: 30%;
+    height: 30px;
+    background-color: green;
+}

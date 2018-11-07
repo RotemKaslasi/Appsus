@@ -17,7 +17,6 @@ export default {
     methods: {
         emailReaded() {
             this.email.isRead = true;
-
         }
     },
     computed: {

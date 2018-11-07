@@ -24,7 +24,6 @@ export default {
         loadEmailData() {
             const emailId = this.$route.params.emailId;
             emailService.getEmailById(emailId).then(email => {
-                // if (book.feedbacks) this.reviews = book.feedbacks;
                 this.email = email
                 this.email.isRead = true;
                 emailService.saveEmail(this.email)
