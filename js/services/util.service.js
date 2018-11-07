@@ -6,23 +6,40 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-function makeId(length=5) {
+function makeId(length = 5) {
     var text = '';
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  
+
     for (var i = 0; i < length; i++)
-      text += possible.charAt(Math.floor(Math.random() * possible.length));
-  
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
     return text;
-  }
+}
+
+function makeLorem(length) {
+
+    var randStr = '';
+    while (randStr.length < length) {
+        var wordLength = getRandomInt(3, 6);
+        var word = createWord(wordLength);
+
+        if (Math.random() > 0.9) word += ',';
+
+        randStr += word + ' ';
+    }
+    randStr = randStr.substring(0, length);
+    randStr = randStr[0].toUpperCase() + randStr.substr(1)
+
+    return randStr;
+}
 
 function getCurrency(currencyCode) {
-    switch(currencyCode){
-        case 'ILS' : 
+    switch (currencyCode) {
+        case 'ILS':
             return '₪';
-        case 'EUR' : 
+        case 'EUR':
             return '€';
-        case 'USD' :
+        case 'USD':
             return '$';
         default:
             return '';
@@ -32,6 +49,22 @@ function getCurrency(currencyCode) {
 export default {
     getRandomInt,
     makeId,
-    getCurrency
+    getCurrency,
+    makeLorem
 }
 
+function getRandChar() {
+    var LETTERS = 'abcdefghijklmnopqrstuvwxyz';
+    var randIndex = parseInt(Math.random() * LETTERS.length)
+    return LETTERS.charAt(randIndex);
+}
+
+function createWord(length) {
+    var word = '';
+    while (word.length < length) {
+        var randChar = getRandChar();
+        word += randChar;
+    }
+
+    return word;
+}

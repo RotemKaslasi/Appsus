@@ -1,0 +1,12 @@
+.email-container{
+    display: flex;
+    border: 3px solid;
+    margin: 4px;
+    padding: 0;
+}
+
+
+.email-container  img{
+    height: 40px;
+    width: 50px;
+}
