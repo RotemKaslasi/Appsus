@@ -3,7 +3,9 @@ import appsusApp from './pages/appSus-app.cmp.js'
 import emailApp from './email/cmps/email-app.cmp.js'
 import emailDetails from './email/cmps/email-details.cmp.js'
 import keepApp from './miss-keep/cmps/keep-app.cmp.js'
-
+import note from './miss-keep/pages/note.js'
+import noteDetails from './miss-keep/cmps/notes/note-details.cmp.js'
+import noteEdit from './miss-keep/cmps/note-edit.cmp.js'
 
 
 const routes = [
@@ -11,6 +13,9 @@ const routes = [
     { path: '/email', component: emailApp },
     { path: '/email/:emailId', component: emailDetails },
     { path: '/keep', component: keepApp },
+    {path: '/note', component: note},
+    {path: '/note/edit/:noteId?', component: noteEdit},
+    {path: '/note/:noteId', component: noteDetails},
 ];
 
 

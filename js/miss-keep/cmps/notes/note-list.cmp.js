@@ -10,13 +10,8 @@ export default {
                     <router-link :to="'/note/edit/'+note.id">Edit</router-link>
                 </note-preview>
                   
-                </ul>
-               
+                </ul>              
         </section>
-
-
-
-   
     `,
 
 

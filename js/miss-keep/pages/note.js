@@ -1,10 +1,11 @@
-import noteList from '../cmps/notes/note-list.js'
+import noteService from '../keep-services/note.service.js'
+import noteList from '../cmps/notes/note-list.cmp.js'
+
+
 
 export default {
     template: `
         <section class="note">
-            <h1>Notes App</h1>
-            <router-link to="/note/edit">New Note</router-link> 
             <note-list :notes="notes"></note-list>
         </section>
     `,
@@ -18,14 +19,11 @@ export default {
             .then(notes => this.notes = notes)
     },
     methods: {
-        // setFilter(filter) {
-        //     carService.query(filter)
-        //     .then(cars => this.cars = cars)
-        // }
+     
     },
     
     components: {
         noteList,
-        // carFilter
+        
     }
 }

@@ -12,7 +12,7 @@ export default {
     
     `,
     created() {
-        console.log('note-Preview was created!', this.note);
+        // console.log('note-Preview was created!', this.note);
     },
 
     computed: {
