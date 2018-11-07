@@ -8,13 +8,14 @@ import emailCompose from './email-compose.cmp.js'
 export default {
     template: `
     <section class="email-app-container">
+        <h1 class="email-top-title">Email App</h1>
             <email-filter @set-filter="setFilter"></email-filter>
             <div class="edit-email-container">
                 <email-list  :emails="emailsForDisplay"></email-list>
                 <email-compose  v-if="isAddEmail" @save-email="saveEmail"></email-compose>
                 <button @click="addEmail">add</button>
             </div>
-            <email-status :status="status"></email-status>
+            <!-- <email-status :status="status"></email-status> -->
     </section>
     `,
     data() {

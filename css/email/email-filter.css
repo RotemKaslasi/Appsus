@@ -1,4 +1,8 @@
 
 .fliter-container{
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 40px; */
+    align-items: center;
 }
