@@ -16,6 +16,14 @@ p{
 }
 h1{
     margin: 0;
+    font-weight: normal;
+}
+a{
+    text-transform: none;
+    color: unset;
+    text-decoration: none;
 }
 
+
+/* @import '/css/email/email-perview.css' */
 

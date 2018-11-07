@@ -37,7 +37,7 @@ function deleteEmail(emailId) {
 }
 
 
-function saveEmail(car) {
+function saveEmail(email) {
     return storageService.load(KEY)
         .then(emails => {
             // Update

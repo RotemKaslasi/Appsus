@@ -10,7 +10,14 @@
 }
 
 
-.email-container  img{
+.email-container > img{
     height: 40px;
     width: 50px;
+}
+
+.email-container.read  .email-text{
+    font-weight: unset;
+}
+.email-container.un-read .email-text{
+    font-weight: bolder;
 }

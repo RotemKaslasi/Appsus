@@ -7,7 +7,7 @@ export default {
     template: `
     <section class="email-app-container">
             <email-list :emails="emails"></email-list>
-            <email-details></email-details>
+            <!-- <email-details :email="emailSelect"></email-details> -->
     </section>
     `,
     data() {
@@ -26,8 +26,7 @@ export default {
         this.loadEmails()
 
     },
-    components:{
+    components: {
         emailList,
-        emailDetails
     }
 }
