@@ -47,9 +47,22 @@ function saveEmail(email) {
             } else {
                 // Add
                 email.id = utilService.makeId();
+                email.sendAt = Date.now();
+                email.isRead = false;
                 emails.push(email);
             }
             return storageService.store(KEY, emails);
+        });
+}
+
+
+function getEmailStatus() {
+    return storageService.load(KEY)
+        .then(emails => {
+            var readEmails = emails.filter(email => {
+                return email.isRead
+            })
+            return readEmails.length / emails.length;
         });
 }
 
@@ -76,5 +89,6 @@ export default {
     query,
     getEmailById,
     deleteEmail,
-    saveEmail
+    saveEmail,
+    getEmailStatus,
 }
