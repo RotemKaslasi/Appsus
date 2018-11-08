@@ -26,10 +26,10 @@ export default {
 
                 
 
-                <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" @newNoteAdded="loadNotes" @newTaskListAdded="loadNotes"></component> 
+                <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" @newNoteAdded="loadNotes"></component> 
               
      
-            <note-list :notes="notes" ></note-list>
+            <note-list :notes="notes"></note-list>
             
     </section>
     `,
@@ -49,8 +49,7 @@ export default {
         }
     },
     methods: {
-        loadNotes() {
-            console.log('loading ...')
+        loadNotes() {            
             servicesNote.query().then(notes => {
                 this.notes = notes;
             })

@@ -9,10 +9,11 @@ export default {
 			<section class="panel">	
 
 				<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected">
-                <input v-model="newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
+                <input v-model="note.newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
 
                 <button @click="addTask" class="todoBtn">Add task</button>
                 <button @click="clearList" class="todoBtn">Clear List</button>
+                <input type="color" v-model="note.bgc.backgroundColor"/>
                 <button @click="saveNote" class="todoBtn">SAVE<form @submit.prevent="saveNote"></form></button>
                 
 
@@ -21,13 +22,13 @@ export default {
 			<section class="list"  v-if="tasksList.length">
 				<ul class="list-item">
 
-					<li v-for="task in tasks" :class="{done: isChecked(task)}">
+					<li v-for="task in note.tasks" :class="{done: isChecked(task)}">
 
 						<input type="checkbox" class="checkbox" @click="check" v-model="task.checked">
 						
-						<input type="text" v-if="task === editingTask" v-auto-focus class="text-input" @keyup.enter="endEditing(task)" @blur="endEditing(task)" v-model="task.text">
+						<input type="text" v-if="task === note.editingTask" v-auto-focus class="text-input" @keyup.enter="endEditing(task)" @blur="endEditing(task)" v-model="task.text">
 
-						<label for="checkbox" v-if="task !== editingTask" @dblclick="editTask(task)">{{ task.text }}</label>
+						<label for="checkbox" v-if="task !== note.editingTask" @dblclick="editTask(task)">{{ task.text }}</label>
 						
 						<button class="delete" @click="removeTask(task)">X</button>
 					</li>
@@ -39,36 +40,39 @@ export default {
 
     data() {
         return {
-            newTask: "",
-            tasks: this.tasksList,
-            editingTask: {
-
-            },
-            data: null
-        }
+            note:{
+                newTask: "",
+                tasks: this.tasksList,
+                editingTask: {
+                },
+                bgc:{backgroundColor: ''},
+                data: null
+        }}
     },
 
     computed: {
         areAllSelected: function () {
-            return this.tasks.every(function (task) {
+            console.log(this.note)
+            return this.note.tasks.every(function (task) {
                 return task.checked;
-            }) && this.tasks.length > 0;
+            }) && this.note.tasks.length > 0;
         },
+    },created(){
+        console.log('tasklist here')
     },
-
     methods: {
 
         addTask() {
-            var task = this.newTask.trim();
+            var task = this.note.newTask.trim();
             if (task) {
-                this.tasks.push({ text: task, checked: false });
-                this.newTask = "";
+                this.note.tasks.push({ text: task, checked: false });
+                this.note.newTask = "";
             }
         },
 
         removeTask(task) {
-            var index = this.tasks.indexOf(task);
-            this.tasks.splice(index, 1);
+            var index = this.note.tasks.indexOf(task);
+            this.note.tasks.splice(index, 1);
         },
 
         editTask(task) {
@@ -84,7 +88,7 @@ export default {
         },
 
         clearList() {
-            this.tasks = [
+            this.note.tasks = [
 
             ];
         },
@@ -92,7 +96,7 @@ export default {
         selectAll(task) {
             var targetValue = this.areAllSelected ? false : true;
             for (var i = 0; i < this.tasks.length; i++) {
-                this.tasks[i].checked = targetValue;
+                this.note.tasks[i].checked = targetValue;
             }
         },
 
@@ -105,8 +109,13 @@ export default {
         },
 
         saveNote() {
-            // console.log('Saved!', this.tasks);
-            this.$emit('newTaskListAdded', { tasks: this.tasks })
+            // console.log(this.note);
+            noteService.saveNote(this.note)
+                .then(() => {
+                    console.log('Saved!');
+                    this.$emit('newNoteAdded');
+                    this.$router.push('/keep');
+                })
         }
 
 
