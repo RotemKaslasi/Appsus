@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
@@ -16,12 +17,12 @@
             <img id="app-icon" src="img/icon app.png" alt="" srcset="">
             <h1 class="head-title">AppSus</h1>
             <img class="hum-icon" src="img/Hamburger_icon.png" :class="toggleMenu" @click="openMenu" alt="">
-            <div class="menu" :class="toggleMenu">
+            <div class="menu" @click="openMenu" :class="toggleMenu">
                 <nav class="nav-bar" :class="toggleMenu">
-                    <router-link exact to="/">Home</router-link>
-                    <router-link exact to="/email">Email</router-link>
-                    <router-link exact to="/keep">Keep Note</router-link>
-                    <router-link exact to="/">About</router-link>
+                    <router-link @click="openMenu" exact to="/">Home</router-link>
+                    <router-link @click="openMenu" exact to="/email">Email</router-link>
+                    <router-link @click="openMenu" exact to="/keep">Keep Note</router-link>
+                    <router-link @click="openMenu" exact to="/">About</router-link>
                 </nav>
             </div>
         </header>

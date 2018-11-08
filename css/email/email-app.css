@@ -13,6 +13,8 @@
     text-shadow: -9px 1px 0px rgba(0,0,0), -15px 0px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
 }
 
+
+
 .edit-email-container{
     /* display: flex; */
 }
@@ -70,3 +72,21 @@
 }
 }
 
+@media(max-width:750px){
+.email-top-title{
+        width: 70%;
+} 
+.search-email-btn{
+      right: 0;
+    align-self: center;
+}
+.search-email{
+        right:130px;
+        top: 140px;
+        left: unset;
+        /* flex-direction: column; */
+}
+.add-email-btn{
+    /* right: 130px; */
+}
+}
