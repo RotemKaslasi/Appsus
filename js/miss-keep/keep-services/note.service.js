@@ -12,6 +12,7 @@ function query(filter = null) {
                 storageService.store(KEY, notes);
             }
             console.log('notes: ', notes);
+            // console.log('note.title',note.title);
             if (filter === null) return notes;
             else return notes.filter(note => 
                             note.title.toUpperCase().includes(filter.byTitle.toUpperCase()))

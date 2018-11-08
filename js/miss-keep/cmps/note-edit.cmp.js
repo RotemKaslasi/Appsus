@@ -9,12 +9,16 @@ export default {
         <form @submit.prevent="saveNote">
             <input id="changeTitle" type="text" v-model="note.title" ><br>
             <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="50">Enter your note </textarea><br>
-            <note-img @imgLoaded="setImage" :data="note.image"></note-img>
-        <input type="color" :value="note.bgc.backgroundColor" @input="note.bgc.backgroundColor=$event.target.value"/>
+
+            <!-- <note-img @imgLoaded="setImage" :data="note.image"></note-img> -->
+
+        <input type="color" v-model="note.bgc.backgroundColor"/>
             <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
+            
         </form>
-        <button @click="openToDo">make to do happen</button>
-            <todo-list v-show="note.todoOn" @TaskAdded="setTasks" :tasksList="note.tasks"></todo-list>
+
+        <!-- <button @click="openToDo">make to do happen</button>
+            <todo-list v-show="note.todoOn" @TaskAdded="setTasks" :tasksList="note.tasks"></todo-list> -->
     </section>
     `,
 
@@ -26,7 +30,7 @@ export default {
                 image:false,
                 bgc:{backgroundColor: '#FFFFFF'},
                 todoOn: false, 
-                tasks:[]  // check why when entering to edit the taks get initialize 
+                tasks:[]   
                
             },
         

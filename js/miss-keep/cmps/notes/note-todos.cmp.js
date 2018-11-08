@@ -1,6 +1,8 @@
+import noteService from '../../keep-services/note.service.js'
+
 export default {
     props: ['tasksList'],
-    
+
     template: `
      <div class="container" id="todo">
 			
@@ -8,8 +10,11 @@ export default {
 
 				<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected">
                 <input v-model="newTask"   @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
+
                 <button @click="addTask">Add task</button>
-				<button @click="clearList">Clear List</button>
+                <button @click="clearList">Clear List</button>
+                <button @click="saveNote">SAVE<form @submit.prevent="saveNote"></form></button>
+                
 
 			</section>
 
@@ -42,7 +47,8 @@ export default {
             tasks: this.tasksList,
             editingTask: {
 
-            }
+            },
+            data: null
         }
     },
 
@@ -56,26 +62,24 @@ export default {
 
     methods: {
 
-        addTask: function () {
+        addTask() {
             var task = this.newTask.trim();
             if (task) {
                 this.tasks.push({ text: task, checked: false });
                 this.newTask = "";
-    
-                this.$emit('TaskAdded', this.tasks);
             }
         },
 
-        removeTask: function (task) {
+        removeTask(task) {
             var index = this.tasks.indexOf(task);
             this.tasks.splice(index, 1);
         },
 
-        editTask: function (task) {
+        editTask(task) {
             this.editingTask = task;
         },
 
-        endEditing: function (task) {
+        endEditing(task) {
             this.editingTask = {};
             if (task.text.trim() === "") {
                 this.removeTask(task);
@@ -83,13 +87,13 @@ export default {
 
         },
 
-        clearList: function () {
+        clearList() {
             this.tasks = [
 
             ];
         },
 
-        selectAll: function (task) {
+        selectAll(task) {
             var targetValue = this.areAllSelected ? false : true;
             for (var i = 0; i < this.tasks.length; i++) {
                 this.tasks[i].checked = targetValue;
@@ -100,9 +104,16 @@ export default {
             task.checked = true;
         },
 
-        isChecked: function (task) {
+        isChecked(task) {
             return task.checked;
+        },
+
+        saveNote() {
+            console.log('Saved!', this.tasks);
+            this.$emit('save-todo', { tasks: this.tasks })
         }
+
+
 
     }
 };
