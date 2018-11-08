@@ -11,10 +11,10 @@ const KEY = 'emailAppKey';
 function query(filter = null) {
     return storageService.load(KEY)
         .then(emails => {
-            if (!emails || !emails.length) {
-                emails = _createInitialEmails();
-                storageService.store(KEY, emails);
-            }
+            // if (!emails || !emails.length) {
+            //     // emails = _createInitialEmails();
+            //     storageService.store(KEY, emails);
+            // }
             console.log('Emails: ', emails);
             return emails;
         })
@@ -31,7 +31,7 @@ function deleteEmail(emailId) {
     return storageService.load(KEY)
         .then(emails => {
             var emailIdx = emails.findIndex(email => email.id === emailId);
-            cars.splice(emailIdx, 1);
+            emails.splice(emailIdx, 1);
             return storageService.store(KEY, emails);
         })
 }

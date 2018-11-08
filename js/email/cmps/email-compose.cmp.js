@@ -2,7 +2,8 @@
 export default {
     template: `
     <section class="add-email-container">
-        <form  @submit="saveEmail">
+        <h1>Create email:</h1>
+        <form class="form-container"  @submit="saveEmail">
             <input type="text" placeholder="Enter sunject" v-model.trim="newEmail.sunject"/>
             <textarea v-model="newEmail.body" cols="30" rows="10"></textarea>
             <button :disabled="!isValid">Send</button>

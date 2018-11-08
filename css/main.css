@@ -1,21 +1,21 @@
-
-@import '/css/base.css';
+@import 'fonts.css';
+@import 'base.css';
 
 /* email */
-@import '/css/email/email-app.css';
-@import '/css/email/email-list.css';
-@import '/css/email/email-perview.css';
-@import '/css/email/email-details.css';
-@import '/css/email/email-status.css';
-@import '/css/email/email-filter.css';
-@import '/css/email/email-compose.css';
+@import 'email/email-app.css';
+@import 'email/email-list.css';
+@import 'email/email-perview.css';
+@import 'email/email-details.css';
+@import 'email/email-status.css';
+@import 'email/email-filter.css';
+@import 'email/email-compose.css';
 
 
 /* keep */
 
-@import '/css/keep/keep-app.css';
-@import '/css/keep/keep-list.css';
-@import '/css/keep/keep-perview.css';
-@import '/css/keep/keep-details.css';
+@import 'keep/keep-app.css';
+@import 'keep/keep-list.css';
+@import 'keep/keep-perview.css';
+@import 'keep/keep-details.css';
 
 
