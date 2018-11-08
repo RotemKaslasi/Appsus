@@ -6,10 +6,15 @@ export default {
 
     template: `
         <section class="note-details-container" v-if="note">
-            <div class="note-details">
+            <div class="note-details" :style="note.bgc">
             <h1>{{note.title}}</h1>
             <h4>{{note.body}}</h4>
-            
+            <div v-if="note.image">
+                <img :src="note.image">
+                <div v-if="note.tasks" v-for="task in note.tasks">
+        <h3>{{task.text}}</h3> <!--  make tasks to look normal-->
+     </div>
+            </div>
             </div>
             
             <button @click="deleteNote">Delete</button>
