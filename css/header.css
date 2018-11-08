@@ -1,5 +1,5 @@
 header {
-    height: 20%;
+    height: 120px;
     box-shadow: 3px 13px 20px 0px #170e17;
     display: grid;
     grid-template-columns: 60px 1fr 1fr;
@@ -25,9 +25,63 @@ header {
     float: left;
     border: 1px solid #fddbd3;
     padding: 30px;
+    background: #fddbd3;
+    border-right: #170e17 solid;
 }
 .nav-bar a:hover{
     float: left;
     border: 1px solid #c2b21f;
     padding: 30px;
+}
+
+.hum-icon{
+    height: 50px;
+    width: 50px;
+    display: none;
+    /* margin-right: 20px; */
+    margin-top: 10px;
+    cursor: pointer;
+}
+.hum-icon.open{
+    transform: rotate(90deg);
+    height: 70px;
+}
+.nav-bar.open{
+    width: 50%;
+    margin-left: 50%;
+    display: block;
+}
+.nav-bar.open a{
+    text-align: center;
+    border: unset;
+    margin: 5px;
+    float: unset;
+    display: block;
+    width: 100%;
+    
+}
+
+.menu.open{
+    z-index: 1;
+    top:120px;
+    right: 0;
+    grid-column: 3;
+    width: 100%;
+    background: #170e1796; 
+    height: 100%;
+    position: absolute;
+       
+}
+
+@media(max-width:1000px){
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-bar{
+        display: none;
+}
+.hum-icon{
+    display: block;
+}
 }

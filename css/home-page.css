@@ -1,7 +1,7 @@
 .home-page-container{
     text-align: center;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 .horse-move{
@@ -47,12 +47,33 @@
 }
 
 .email-link ,.keep-link{
-    font-family: guy;
-    border: 1px solid;
-    padding: 100px;
     margin-top:20px;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    padding: 0;
+    border: unset;
+    cursor: pointer;
+    background: unset;
+    margin-bottom: 10px;
 }
+.email-link img ,.keep-link img{
+    height: 200px;
+    width: 200px;
+}
+/* .keep-link img{
+    height: 100px;
+    width: 100px;
+}
+.keep-link{
+    height: 100px;
+    width: 100px;
+} */
 .email-link:hover ,.keep-link:hover{
+    /* transform: skew(20deg,180deg) */
+}
 
+@media(max-width:600px){
+    .email-link ,.keep-link{
+        display: block;
+        margin: 10px auto;
+    }
 }

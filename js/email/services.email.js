@@ -60,7 +60,7 @@ function saveEmail(email) {
 function getEmailStatus() {
     return storageService.load(KEY)
         .then(emails => {
-            if (!emails) return;
+            if (!emails) return 0;
             var readEmails = emails.filter(email => {
                 return email.isRead
             })

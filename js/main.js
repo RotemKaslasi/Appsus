@@ -10,7 +10,24 @@ import router from './routes.js'
 new Vue({
     el: "#app",
     router,
-    components:{
+    components: {
         // appsusApp
+    },
+    data: {
+        isToggleMenu: false
+    },
+    methods: {
+        openMenu() {
+            console.log('open')
+            this.isToggleMenu = !this.isToggleMenu;
+        }
+    },
+    computed: {
+        toggleMenu() {
+            return {
+                'close': !this.isToggleMenu,
+                'open': this.isToggleMenu
+            }
+        }
     }
 })
