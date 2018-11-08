@@ -20,6 +20,10 @@ new Vue({
         openMenu() {
             console.log('open')
             this.isToggleMenu = !this.isToggleMenu;
+        },
+        closeMenu(){
+            this.isToggleMenu = false;
+
         }
     },
     computed: {
