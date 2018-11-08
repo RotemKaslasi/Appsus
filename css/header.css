@@ -1,31 +1,34 @@
 header {
     height: 120px;
     box-shadow: 3px 13px 20px 0px #170e17;
-    display: grid;
-    grid-template-columns: 60px 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
 }
 
 .head-title{
     font-family: kumar;
-    font-size: 40px
+    font-size: 70px
+}
+.logo-container{
+    display: flex;
+    align-items: center;
 }
 
 #app-icon{
-    height: 50px;
-    width: 50px;
+    height: 90px;
+    width: 90px;
 }
 .router-link-active{
-    background: #ee7841;
+    box-shadow: 3px 3px 3px black;
 }
 
 
 .nav-bar a{
+    color: white;
     font-family: noto;
     float: left;
-    border: 1px solid #fddbd3;
     padding: 30px;
-    background: #fddbd3;
     border-right: #170e17 solid;
 }
 .nav-bar a:hover{
@@ -64,7 +67,7 @@ header {
 .menu.open{
     z-index: 1;
     top:120px;
-    right: 0;
+    right: 10px;
     grid-column: 3;
     width: 100%;
     background: #170e1796; 

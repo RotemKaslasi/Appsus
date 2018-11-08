@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
 
     <title>AppSus</title>
 </head>
@@ -15,16 +17,18 @@
 
 <body>
     <div id="app">
-        <header >
-            <img id="app-icon" src="img/icon app.png" alt="" srcset="">
-            <h1 class="head-title">AppSus</h1>
+        <header>
+            <div class="logo-container">
+                <img id="app-icon" src="img/icon app.png" alt="" srcset="">
+                <h1 class="head-title">AppSus</h1>
+            </div>
             <img class="hum-icon" src="img/Hamburger_icon.png" :class="toggleMenu" @click="openMenu" alt="">
-            <div class="menu" :class="toggleMenu">
+            <div class="menu" @click="closeMenu" :class="toggleMenu">
                 <nav class="nav-bar" :class="toggleMenu">
-                    <router-link exact to="/">Home</router-link>
-                    <router-link exact to="/email">Email</router-link>
-                    <router-link exact to="/keep">Keep Note</router-link>
-                    <router-link exact to="/">About</router-link>
+                    <router-link @click="closeMenu" exact to="/">Home</router-link>
+                    <router-link @click="closeMenu" exact to="/email">Email</router-link>
+                    <router-link @click="closeMenu" exact to="/keep">Keep Note</router-link>
+                    <router-link @click="closeMenu" exact to="/">About</router-link>
                 </nav>
             </div>
         </header>
