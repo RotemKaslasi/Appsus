@@ -42,6 +42,8 @@ export default {
     },
     computed: {
         emailsForDisplay() {
+            // if(!this.emails)return
+            // debugger
             if (!this.filter.txt && this.filter.emailStatus === 'all') return this.emails;
             if (this.filter.emailStatus === 'read') {
                 return this.emails
@@ -86,6 +88,7 @@ export default {
         },
         saveEmail(newEmail) {
             this.isAddEmail = false;
+            console.log(newEmail)
             servicesEmail.saveEmail(newEmail).then(() => {
                 this.loadEmails()
             })

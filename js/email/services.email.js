@@ -8,7 +8,7 @@ import utilService from '../services/util.service.js'
 
 const KEY = 'emailAppKey';
 
-function query(filter = null) {
+function query() {
     return storageService.load(KEY)
         .then(emails => {
             // if (!emails || !emails.length) {
@@ -46,6 +46,7 @@ function saveEmail(email) {
                 emails.splice(emailIdx, 1, email);
             } else {
                 // Add
+                if (!emails) emails = [];
                 email.id = utilService.makeId();
                 email.sendAt = Date.now();
                 email.isRead = false;
@@ -59,6 +60,7 @@ function saveEmail(email) {
 function getEmailStatus() {
     return storageService.load(KEY)
         .then(emails => {
+            if (!emails) return;
             var readEmails = emails.filter(email => {
                 return email.isRead
             })
