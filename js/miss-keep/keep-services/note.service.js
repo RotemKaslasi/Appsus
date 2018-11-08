@@ -62,7 +62,10 @@ function _createInitialNote() {
         id: utilService.makeId(),
         title: utilService.makeLorem(3),
         body: utilService.makeLorem(50),
-        background : null
+        background : null,
+        image: false,
+        bgc:{backgroundColor: '#FFFFFF'},
+        tasks:[],
         // isRead: false,
         
        
