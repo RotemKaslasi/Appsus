@@ -5,7 +5,7 @@ import emailService from '../services.email.js'
 export default {
     template: `
     <section class="details-container" v-if="email">
-        <h1>{{email.subject}}</h1>
+        <h1 class="title-details">{{email.subject}}</h1>
         <p>{{new Date(email.sendAt).toGMTString()}}</p>
         <p>{{email.body}}</p>
         <button @click="backToList">back</button>

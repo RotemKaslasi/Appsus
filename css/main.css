@@ -1,5 +1,7 @@
 @import 'fonts.css';
 @import 'base.css';
+@import 'header.css';
+@import 'home-page.css';
 
 /* email */
 @import 'email/email-app.css';
