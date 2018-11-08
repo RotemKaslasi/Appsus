@@ -18,8 +18,7 @@ export default {
 
 			</section>
 
-			<section class="list">
-                <div v-if="tasksList.length">
+			<section class="list"  v-if="tasksList.length">
 				<ul class="list-item">
 
 					<li v-for="task in tasks" :class="{done: isChecked(task)}">
@@ -31,11 +30,8 @@ export default {
 						<label for="checkbox" v-if="task !== editingTask" @dblclick="editTask(task)">{{ task.text }}</label>
 						
 						<button class="delete" @click="removeTask(task)">X</button>
-
 					</li>
-				
 				</ul>
-                </div>
 			</section>
 
 	</div>
@@ -109,8 +105,8 @@ export default {
         },
 
         saveNote() {
-            console.log('Saved!', this.tasks);
-            this.$emit('save-todo', { tasks: this.tasks })
+            // console.log('Saved!', this.tasks);
+            this.$emit('save', { tasks: this.tasks })
         }
 
 
