@@ -9,13 +9,21 @@ export default {
     template: `
     <section class="email-app-container">
         <h1 class="email-top-title">Email App</h1>
-            <email-filter @set-filter="setFilter"></email-filter>
-            <button class="add-email-btn" @click="addEmail"><img class="add-email-img" src="img/add-email.png" alt="" srcset=""></button>
-            <email-status :status="status"></email-status>            
+        <div class="search-email">
+            <email-filter v-if="isSearchEmail" @set-filter="setFilter"></email-filter>
+            <button class="search-email-btn" @click="searchEmail">
+                <img class="search-email-img" src="img/search.png" alt="" srcset="">
+            </button>
+        </div>
+            <button class="add-email-btn" @click="addEmail">
+                <img class="add-email-img" src="img/add-email.png" alt="" srcset="">
+            </button>
             <div class="edit-email-container">
                 <email-list  :emails="emailsForDisplay"></email-list>
                 <email-compose  v-if="isAddEmail" @save-email="saveEmail"></email-compose>
             </div>
+            <email-status :status="status"></email-status>            
+
     </section>
     `,
     data() {
@@ -26,7 +34,8 @@ export default {
                 txt: null,
                 emailStatus: 'all'
             },
-            isAddEmail: false
+            isAddEmail: false,
+            isSearchEmail: false
         }
     },
     computed: {
@@ -69,6 +78,9 @@ export default {
         },
         addEmail() {
             this.isAddEmail = !this.isAddEmail;
+        },
+        searchEmail() {
+            this.isSearchEmail = !this.isSearchEmail;
         },
         saveEmail(newEmail) {
             this.isAddEmail = false;

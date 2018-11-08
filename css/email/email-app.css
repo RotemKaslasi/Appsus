@@ -1,5 +1,5 @@
 .email-app-container{
-    height: 100vh;
+    height: 100%;
     background: url('../../img/back-email.jpg') no-repeat center fixed;
     background-size: cover;
 }
@@ -7,7 +7,7 @@
 .email-top-title{
     color: #5c7ac0;
     text-align: center;
-    font-size: 60px;
+    font-size: 80px;
     font-family: 'Righteous', cursive;
     padding: 20px;
     text-shadow: -2px -2px 0px rgba(0,0,0), 2px 2px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
@@ -18,9 +18,12 @@
 }
 
 @media(max-width:800px){
+.email-app-container{
+    font-size: 1.5em;
+    }    
 .edit-email-container{
-    width: 100vw;
-    flex-direction: column;
+    /* width: 100vw;
+    flex-direction: column; */
 }
 }
 .add-email-btn{
@@ -31,7 +34,7 @@
     top: 24px;
     right: 40px;
 }
-.add-email-btn:focus{
+.add-email-btn:focus ,.search-email-btn:focus{
     outline: none;
 }
 
@@ -39,5 +42,31 @@
     height: 50px;
     width: 50px;
     padding: 0;
+}
+.search-email{
+    top: 24px;
+    left: 40px;
+    position: absolute;
+    display: flex;
+}
+
+.search-email-btn{
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.search-email-img{
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+}
+@media(max-width:950px){
+.search-email{
+    flex-direction: column-reverse;
+}
+.search-email-btn{
+    align-self: end
+}
 }
 

@@ -5,13 +5,18 @@ export default {
     template: `
     <section class="email-list-container">
         <ul class="email-list">
-            <email-preview  v-for="email in emails" @click.native="emailSelected(email)" :email="email"></email-preview>
+            <email-preview  v-for="email in emails" 
+            :email="email"
+            @click.native="emailSelected(email)"
+            ></email-preview>
         </ul>
     </section>
     `,
     methods: {
         emailSelected(email) {
-            this.$emit('emailSelected', email)
+            console.log('email was selected')
+            // this.$emit('emailSelected', email)
+            this.$router.push('/email/' + email.id)
         }
     },
     components: {

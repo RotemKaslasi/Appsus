@@ -1,9 +1,10 @@
 
 .fliter-container{
-    /* text-align: center; */
+    border: 3px solid;
     display: flex;
     flex-direction: column;
-    /* margin-left: 40px; */
+    padding: 10px;
+    border-radius: 10px;
     align-items: center;
     background-color: rgba(96, 182, 231, 0.63);
 }
