@@ -29,7 +29,7 @@
 .add-email-btn{
     border-radius: 50px;
     margin: 10px;
-    position: fixed;
+    position: absolute;
     cursor: pointer;
     top: 140px;
     right: 40px;
@@ -46,7 +46,7 @@
 .search-email{
     top: 140px;
     left: 40px;
-    position: fixed;
+    position: absolute;
     display: flex;
 }
 
