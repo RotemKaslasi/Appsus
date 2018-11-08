@@ -9,17 +9,16 @@ export default {
 			<section class="panel">	
 
 				<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected">
-                <input v-model="newTask"   @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
+                <input v-model="newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
 
-                <button @click="addTask">Add task</button>
-                <button @click="clearList">Clear List</button>
-                <button @click="saveNote">SAVE<form @submit.prevent="saveNote"></form></button>
+                <button @click="addTask" class="todoBtn">Add task</button>
+                <button @click="clearList" class="todoBtn">Clear List</button>
+                <button @click="saveNote" class="todoBtn">SAVE<form @submit.prevent="saveNote"></form></button>
                 
 
 			</section>
 
-			<section class="list">
-                <div v-if="tasksList.length">
+			<section class="list"  v-if="tasksList.length">
 				<ul class="list-item">
 
 					<li v-for="task in tasks" :class="{done: isChecked(task)}">
@@ -31,11 +30,8 @@ export default {
 						<label for="checkbox" v-if="task !== editingTask" @dblclick="editTask(task)">{{ task.text }}</label>
 						
 						<button class="delete" @click="removeTask(task)">X</button>
-
 					</li>
-				
 				</ul>
-                </div>
 			</section>
 
 	</div>
@@ -109,8 +105,8 @@ export default {
         },
 
         saveNote() {
-            console.log('Saved!', this.tasks);
-            this.$emit('save-todo', { tasks: this.tasks })
+            // console.log('Saved!', this.tasks);
+            this.$emit('save', { tasks: this.tasks })
         }
 
 

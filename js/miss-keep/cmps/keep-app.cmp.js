@@ -6,43 +6,41 @@ import noteTodo from './notes/note-todos.cmp.js'
 import noteEdit from './note-edit.cmp.js'
 import noteImg from './note-img.cmp.js'
 
-// import noteDetails from '../note-details.cmp.js'
-
 
 export default {
     template: `
+    
     <section class="note-app-container">
+                
                 <h1 class="notes-app-title">Notes App</h1>
-                <button class="newNoteBtn">text note</button>
-                <button class="newNoteBtn">img note</button>
-                <button class="newNoteBtn">todo note</button>
-                <note-filter @filtered="setFilter"></note-filter>
-
-                <!-- <component is="noteTodo" :tasksList="notes" @save-todo="saveTodo"></component> -->
-                <!-- <component is="noteEdit" ></component> -->
-                <component is="noteImg" :data="item.image" ></component> 
-                
-
-
+                <note-filter @filtered="setFilter" ></note-filter>
+                <div class="btn-control">
+                <button @click="txtChoose" class="newNoteBtn textBtn"><i class="fas fa-align-justify"></i> </button>
+                <button @click="imageChoose" class="newNoteBtn imgBtn"><i class="far fa-image"></i></button>
+                <button @click="todoChoose" class="newNoteBtn todoBtn"> <i class="fas fa-check-square"></i></button>
+                </div>
 
                 
-                
-                
+
+                <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" ></component> 
+              
      
             <note-list :notes="notes"></note-list>
             
     </section>
     `,
 
-    // <note-details></note-details>
+
 
 
     data() {
         return {
             notes: [],
-            item: {
+            note: {
                 image: false
             },
+            nameCmp: null,
+            tasks:[]
         }
     },
     methods: {
@@ -55,11 +53,27 @@ export default {
             servicesNote.query(filter)
                 .then(notes => this.notes = notes)
         },
-        saveTodo(tasks) {
-            servicesNote.saveNote(tasks);
-            console.log('father saved',tasks)
+        saveNote(note) {
+            servicesNote.saveNote(note);
+            console.log('father saved', this.notes)
             this.loadNotes();
-        }
+        },
+        txtChoose() {
+            this.nameCmp = 'noteEdit';
+                  
+        },
+        imageChoose() {
+            this.nameCmp = 'noteImg';
+        },
+        todoChoose() {
+            this.nameCmp = 'noteTodo';
+           
+           
+        },
+    
+
+
+
     },
     created() {
         this.loadNotes()

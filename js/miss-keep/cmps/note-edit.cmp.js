@@ -8,17 +8,17 @@ export default {
         <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
         <form @submit.prevent="saveNote">
             <input id="changeTitle" type="text" v-model="note.title" ><br>
-            <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="50">Enter your note </textarea><br>
+            <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="30">Enter your note </textarea><br>
 
-            <!-- <note-img @imgLoaded="setImage" :data="note.image"></note-img> -->
-
-        <input type="color" v-model="note.bgc.backgroundColor"/>
+            <input type="color" v-model="note.bgc.backgroundColor"/>
             <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
             
-        </form>
+            <img v-if=note.item :src="note.item.imageSrc"/>
+            <input type="file" @change="onFileChanged">
+           <button @click="removeImage">Remove image</button>
 
-        <!-- <button @click="openToDo">make to do happen</button>
-            <todo-list v-show="note.todoOn" @TaskAdded="setTasks" :tasksList="note.tasks"></todo-list> -->
+        
+        </form>       
     </section>
     `,
 
@@ -28,7 +28,7 @@ export default {
                 title: '',
                 body: '',
                 image:false,
-                bgc:{backgroundColor: '#FFFFFF'},
+                bgc:{backgroundColor: ''},
                 todoOn: false, 
                 tasks:[]   
                
@@ -66,7 +66,33 @@ export default {
         setTasks(tasksList){
             this.note.tasks = tasksList;
             
-        }
+        }, onFileChanged() {
+            this.note.item.image = true;
+            var item = this.note.item;
+            var selectedFile = event.target.files[0];
+            var reader = new FileReader();
+            reader.addEventListener('load', () => {
+                item.imageSrc = reader.result;
+               
+            }, false)
+            if (selectedFile) {
+                reader.readAsDataURL(selectedFile);
+            }
+        },
+        saveNoteImg(){
+            noteService.saveNote(this.note)
+            .then(() => {
+                console.log('Saved!');
+                this.$emit('save', this.note)
+               
+            })
+            
+        },
+
+        removeImage(){
+            this.note.item ='';
+           
+        },
     },
     components:{
         noteImg,
