@@ -54,6 +54,7 @@ export default {
             noteService.saveNote(this.note)
                 .then(() => {
                     console.log('Saved!');
+                    this.$emit('newNoteAdded');
                     this.$router.push('/keep');
                 })
         },

@@ -106,7 +106,7 @@ export default {
 
         saveNote() {
             // console.log('Saved!', this.tasks);
-            this.$emit('save', { tasks: this.tasks })
+            this.$emit('newTaskListAdded', { tasks: this.tasks })
         }
 
 

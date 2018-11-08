@@ -13,6 +13,10 @@ export default {
     <section class="note-app-container">
                 
                 <h1 class="notes-app-title">Notes App</h1>
+                <button class="search-email-btn" @click="searchNote">
+                <img class="search-email-img" src="img/search.png" alt="" srcset="">
+                </button>
+
                 <note-filter @filtered="setFilter" ></note-filter>
                 <div class="btn-control">
                 <button @click="txtChoose" class="newNoteBtn textBtn"><i class="fas fa-align-justify"></i> </button>
@@ -22,10 +26,10 @@ export default {
 
                 
 
-                <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" ></component> 
+                <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" @newNoteAdded="loadNotes" @newTaskListAdded="loadNotes"></component> 
               
      
-            <note-list :notes="notes"></note-list>
+            <note-list :notes="notes" ></note-list>
             
     </section>
     `,
@@ -40,11 +44,13 @@ export default {
                 image: false
             },
             nameCmp: null,
-            tasks:[]
+            tasks:[],
+            // isSearchNote=false
         }
     },
     methods: {
         loadNotes() {
+            console.log('loading ...')
             servicesNote.query().then(notes => {
                 this.notes = notes;
             })
@@ -67,8 +73,10 @@ export default {
         },
         todoChoose() {
             this.nameCmp = 'noteTodo';
-           
-           
+          
+        },
+        searchNote() {
+            this.isSearchNote = !this.isSearchNote;
         },
     
 
