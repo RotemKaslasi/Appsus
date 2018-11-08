@@ -4,6 +4,8 @@ import emailList from './email-list.cmp.js'
 import emailStatus from './email-status.cmp.js'
 import emailFilter from './email-filter.cmp.js'
 import emailCompose from './email-compose.cmp.js'
+import eventBus, { DELETED_EMAIL } from '../../services/event-bus.service.js'
+
 
 export default {
     template: `
@@ -92,6 +94,11 @@ export default {
     created() {
         this.loadEmails()
         this.getStatus()
+        eventBus.$on(DELETED_EMAIL, (email) => {
+            servicesEmail.deleteEmail(email.id).then(() => {
+                this.loadEmails()
+            })
+        })
 
     },
     components: {

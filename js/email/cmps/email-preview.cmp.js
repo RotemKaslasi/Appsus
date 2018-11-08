@@ -1,5 +1,6 @@
 'use strict'
-import eventBus, { EMAIL_SELECTED } from '../../services/event-bus.service.js'
+import eventBus, { DELETED_EMAIL  } from '../../services/event-bus.service.js'
+import servicesEmail from '../services.email.js'
 export default {
     props: ['email'],
     template: `
@@ -20,9 +21,9 @@ export default {
         emailReaded() {
             this.email.isRead = true;
         },
-        deleteEmail(ev){
-            ev.stopPropagation();
+        deleteEmail() {
             console.log('delete')
+            eventBus.$emit(DELETED_EMAIL ,this.email)
         }
     },
     computed: {

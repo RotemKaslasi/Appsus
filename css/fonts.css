@@ -1,0 +1,8 @@
+@font-face {
+    font-family: ubuntu;
+    src: url('./fonts/ubuntu/Ubuntu-Regular.ttf');
+}
+@font-face {
+    font-family: noto;
+    src: url('./fonts/noto/NotoSansKR-Regular.otf');
+}
