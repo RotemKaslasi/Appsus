@@ -12,20 +12,23 @@
 
 <body>
     <div id="app">
-        <header>
+        <header >
             <img id="app-icon" src="img/icon app.png" alt="" srcset="">
             <h1 class="head-title">AppSus</h1>
-            <nav class="nav-bar">
-                <router-link exact to="/">Home</router-link>
-                <router-link exact to="/email">Email</router-link>
-                <router-link exact to="/keep">Keep Note</router-link>
-                <router-link exact to="/">About</router-link>
-            </nav>
+            <img class="hum-icon" src="img/Hamburger_icon.png" :class="toggleMenu" @click="openMenu" alt="">
+            <div class="menu" :class="toggleMenu">
+                <nav class="nav-bar" :class="toggleMenu">
+                    <router-link exact to="/">Home</router-link>
+                    <router-link exact to="/email">Email</router-link>
+                    <router-link exact to="/keep">Keep Note</router-link>
+                    <router-link exact to="/">About</router-link>
+                </nav>
+            </div>
         </header>
         <router-view></router-view>
     </div>
 
-    
+
     <script src="lib/moment.js"></script>
     <script src="lib/vue.js"></script>
     <script src="lib/vue-router.js"></script>
