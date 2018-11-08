@@ -1,4 +1,21 @@
 .add-email-container{
-    width: 700px;
+    text-align: center;
+    width: 500px;
     border: 1px solid;
+    position: absolute;
+    top: 30%;
+    right: 0;
+    height: 400px;
+    background: white;
+}
+
+.form-container input,textarea,button{
+    display: block;
+    margin: 20px auto;
+
+}
+
+.add-email-container h1{
+    margin-top: 10px;
+    font-size: 2em;
 }

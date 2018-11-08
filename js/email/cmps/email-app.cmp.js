@@ -11,11 +11,11 @@ export default {
         <h1 class="email-top-title">Email App</h1>
             <email-filter @set-filter="setFilter"></email-filter>
             <button class="add-email-btn" @click="addEmail"><img class="add-email-img" src="img/add-email.png" alt="" srcset=""></button>
+            <email-status :status="status"></email-status>            
             <div class="edit-email-container">
                 <email-list  :emails="emailsForDisplay"></email-list>
                 <email-compose  v-if="isAddEmail" @save-email="saveEmail"></email-compose>
             </div>
-            <!-- <email-status :status="status"></email-status> -->
     </section>
     `,
     data() {
