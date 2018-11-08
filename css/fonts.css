@@ -6,3 +6,15 @@
     font-family: noto;
     src: url('./fonts/noto/NotoSansKR-Regular.otf');
 }
+@font-face {
+    font-family: kumar;
+    src: url('./fonts/kumar/KumarOneOutline-Regular.ttf');
+}
+@font-face {
+    font-family: alfa;
+    src: url('./fonts/alfa/AlfaSlabOne-Regular.ttf');
+}
+@font-face {
+    font-family: guy;
+    src: url('./fonts/guy/LuckiestGuy-Regular.ttf');
+}

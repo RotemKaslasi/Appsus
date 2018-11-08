@@ -1,8 +1,8 @@
-.note-app-container{
+/* .note-app-container{
     height: 100%;
     background: lightgoldenrodyellow;
     background-size: cover;
-}
+} */
 .notes-app-title{
     text-align: center;
     font-size: 3rem;
@@ -10,12 +10,19 @@
 }
 
 .newNoteBtn{
-    background-color: lightskyblue;
+    background-color: #9370DB;
+    border: none;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-    border-radius: 5px;
     
 }
 
 .newNoteBtn:hover{
-    background-color: lightgoldenrodyellow;
+    background-color:rgb(46, 41, 54);
 }

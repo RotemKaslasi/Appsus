@@ -7,8 +7,10 @@ html,body{
 }
 
 body{
-    
+    background: url('../img/main-back.jpg') no-repeat center fixed;
+    background-size: cover; 
     margin: 0;
+
 }
 
 p{
@@ -22,4 +24,8 @@ a{
     text-transform: none;
     color: unset;
     text-decoration: none;
+}
+#app{
+    height: 100%;
+    width: 100%;
 }

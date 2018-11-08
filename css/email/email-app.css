@@ -1,16 +1,16 @@
 .email-app-container{
     height: 100%;
-    background: url('../../img/back-email.jpg') no-repeat center fixed;
+    /* background: url('../../img/mail-background-7.jpg') no-repeat center fixed; */
     background-size: cover;
 }
 
 .email-top-title{
-    color: #5c7ac0;
+    color: #dce2f1;
     text-align: center;
     font-size: 80px;
     font-family: 'Righteous', cursive;
     padding: 20px;
-    text-shadow: -2px -2px 0px rgba(0,0,0), 2px 2px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
+    text-shadow: -9px 1px 0px rgba(0,0,0), -15px 0px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
 }
 
 .edit-email-container{
@@ -29,9 +29,9 @@
 .add-email-btn{
     border-radius: 50px;
     margin: 10px;
-    position: absolute;
+    position: fixed;
     cursor: pointer;
-    top: 24px;
+    top: 140px;
     right: 40px;
 }
 .add-email-btn:focus ,.search-email-btn:focus{
@@ -44,9 +44,9 @@
     padding: 0;
 }
 .search-email{
-    top: 24px;
+    top: 140px;
     left: 40px;
-    position: absolute;
+    position: fixed;
     display: flex;
 }
 
