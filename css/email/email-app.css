@@ -1,23 +1,43 @@
 .email-app-container{
     height: 100vh;
-    /* margin:  10px auto; */
     background: url('../../img/back-email.jpg') no-repeat center fixed;
     background-size: cover;
 }
 
 .email-top-title{
+    color: #5c7ac0;
     text-align: center;
     font-size: 60px;
     font-family: 'Righteous', cursive;
     padding: 20px;
+    text-shadow: -2px -2px 0px rgba(0,0,0), 2px 2px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
 }
 
 .edit-email-container{
-    display: flex;
+    /* display: flex; */
 }
+
 @media(max-width:800px){
 .edit-email-container{
+    width: 100vw;
     flex-direction: column;
 }
+}
+.add-email-btn{
+    border-radius: 50px;
+    margin: 10px;
+    position: absolute;
+    cursor: pointer;
+    top: 24px;
+    right: 40px;
+}
+.add-email-btn:focus{
+    outline: none;
+}
+
+.add-email-img{
+    height: 50px;
+    width: 50px;
+    padding: 0;
 }
 

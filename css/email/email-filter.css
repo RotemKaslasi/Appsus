@@ -5,4 +5,30 @@
     flex-direction: column;
     /* margin-left: 40px; */
     align-items: center;
+    background-color: rgba(96, 182, 231, 0.63);
+}
+
+.fliter-radio{
+    font-size: 1em; 
+    font-family: 'Gill Sans', 'Gill Sans MT', 
+                  Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+
+}
+
+.filter-txt{
+    display: flex;
+
+    align-items: center;
+    font-size: 2em; 
+    font-family: 'Gill Sans', 'Gill Sans MT', 
+                  Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold; 
+    text-align: center;
+}
+
+.filter-txt input{
+    padding: 6px;
+    border-radius: 8px;
+    background-color: rgba(136, 136, 218, 0.37);
 }
