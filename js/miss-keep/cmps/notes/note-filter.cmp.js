@@ -1,8 +1,8 @@
 export default {
     template:`
     <section class="note-filter">
-        <h3>Filter</h3>
-        <input type="text" v-model="filter.byTitle" @input="emitFilter" placeholder="Search Note"/>
+        
+        <input type="text" v-model="filter.byTitle" @input="emitFilter" placeholder="Search your Note"/>
     </section>
     `,
     data() {

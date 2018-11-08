@@ -8,7 +8,7 @@ export default {
         <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
         <form @submit.prevent="saveNote">
             <input id="changeTitle" type="text" v-model="note.title" ><br>
-            <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="50">Enter your note </textarea><br>
+            <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="30">Enter your note </textarea><br>
 
             <input type="color" v-model="note.bgc.backgroundColor"/>
             <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
@@ -28,7 +28,7 @@ export default {
                 title: '',
                 body: '',
                 image:false,
-                bgc:{backgroundColor: '#FFFFFF'},
+                bgc:{backgroundColor: ''},
                 todoOn: false, 
                 tasks:[]   
                

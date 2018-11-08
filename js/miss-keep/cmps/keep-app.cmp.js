@@ -11,11 +11,16 @@ export default {
     template: `
     
     <section class="note-app-container">
+                
                 <h1 class="notes-app-title">Notes App</h1>
-                <button @click="txtChoose" class="newNoteBtn">text note</button>
-                <button @click="imageChoose" class="newNoteBtn">img note</button>
-                <button @click="todoChoose" class="newNoteBtn">todo note</button>
-                <note-filter @filtered="setFilter"></note-filter>
+                <note-filter @filtered="setFilter" ></note-filter>
+                <div class="btn-control">
+                <button @click="txtChoose" class="newNoteBtn textBtn"><i class="fas fa-align-justify"></i> </button>
+                <button @click="imageChoose" class="newNoteBtn imgBtn"><i class="far fa-image"></i></button>
+                <button @click="todoChoose" class="newNoteBtn todoBtn"> <i class="fas fa-check-square"></i></button>
+                </div>
+
+                
 
                 <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" ></component> 
               
