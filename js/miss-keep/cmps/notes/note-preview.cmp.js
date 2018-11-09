@@ -1,3 +1,6 @@
+
+
+
 export default {
     props: ['note'],
     template: `
@@ -20,14 +23,19 @@ export default {
             </li> 
     
     `,
+    data() {
+        return {
+            toDelete: false
+        }
+    },
     created() {
-        // console.log('note-Preview was created!', this.note);
+        console.log('note-Preview was created!', this.note);
     },
 
     computed: {
         noteDetailsLink() {
             return `/note/${this.note.id}`;
-        }
+        },
     }
 
 
@@ -36,5 +44,3 @@ export default {
 
 
 
-
-   

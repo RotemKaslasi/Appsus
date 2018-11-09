@@ -6,6 +6,10 @@ export default {
     template: `
     <section class="note-edit" v-bind:style="note.bgc">
         <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
+        <div v-if="note.tasks.length > 0">
+            <todo-list :tasksList="note.tasks"></todo-list>
+        </div>
+        <div v-else>
         <form @submit.prevent="saveNote">
             <input id="changeTitle" type="text" v-model="note.title" ><br>
             <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="30">Enter your note </textarea><br>
@@ -14,11 +18,10 @@ export default {
             <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
             
             <img v-if=note.item :src="note.item.imageSrc"/>
-            <input type="file" @change="onFileChanged">
-           <button @click="removeImage">Remove image</button>
-
-        
-        </form>       
+            <input v-if=note.item type="file" @change="onFileChanged">
+            <button v-if=note.item @click="removeImage">Remove image</button>
+        </form>     
+        </div>  
     </section>
     `,
 
@@ -38,22 +41,21 @@ export default {
     },
 
     created() {
+        
         const noteId = this.$route.params.noteId;
         if (noteId) {
             noteService.getById(noteId)
                 .then(note => {
                     this.note = note
-                    console.log(this.note.tasks)
-                })
-
-        }
+                })}
     },
     methods: {
         saveNote() {
-            // console.log(this.note);
+            console.log(this.note);
             noteService.saveNote(this.note)
                 .then(() => {
                     console.log('Saved!');
+                    this.$emit('newNoteAdded');
                     this.$router.push('/keep');
                 })
         },

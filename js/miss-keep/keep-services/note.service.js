@@ -49,6 +49,7 @@ function deleteNote(noteId) {
 function getById(noteId) {
     return storageService.load(KEY)
         .then(notes => {
+            console.log(notes.find(note => note.id === noteId))
             return notes.find(note => note.id === noteId);
         })
 }
@@ -62,12 +63,11 @@ function _createInitialNote() {
     return {
         id: utilService.makeId(),
         title: utilService.makeLorem(3),
-        body: utilService.makeLorem(50),
-        background : null,
+        body: utilService.makeLorem(40),
         item:'',
         bgc:{backgroundColor: '#FFFFFF'},
         tasks:[],
-        // isRead: false,
+       
         
        
     }
