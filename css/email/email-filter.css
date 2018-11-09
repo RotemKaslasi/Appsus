@@ -38,7 +38,7 @@
 
 
 @media(max-width:950px){
-.fliter-container.search-open{
+.fliter-container.search-open,.fliter-container.search-close{
         text-align: center;
         border: 3px solid;
         padding: 10px;
@@ -47,16 +47,7 @@
         display:block;
         margin: 0 auto;
         width: 80%;
-    }
-.fliter-container.search-close{
-        display: block;
-        margin: 0 auto;
-        width: 80%;
-        text-align: center;
-        border: 3px solid;
-        padding: 10px;
-        border-radius: 10px;
-        background-color: rgba(168, 88, 22, 0.63);
+        height: fit-content;
     }
 .filter-txt{
         display: block;
