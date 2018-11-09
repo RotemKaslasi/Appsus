@@ -76,7 +76,7 @@ i{
     padding: 0 40px;
 }
 
-#todo{
+.todo{
     width: 30%;
     margin: 0 auto;
     border-radius: 0 0 7px 7px;
@@ -85,6 +85,10 @@ i{
 
 #tasks-box{
     background-color: white;
+}
+
+.edit-list{
+    width:100%;
 }
 
 /* #cmpMain{

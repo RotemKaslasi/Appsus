@@ -4,7 +4,7 @@
 export default {
     props: ['note'],
     template: `
-            <li class="note-list-container" :style="note.bgc">
+            <li class="note-list-container" :style="note.bgc" :class="{'is-image': note.item}" >
              
                 <div v-if="note.tasks.length>0" v-for="task in note.tasks">
                         <h3>{{task.text}}</h3>   
@@ -14,9 +14,8 @@ export default {
                 </h2>
 
                 <h3 v-if="note.body">{{note.body}}</h3>
-
-                    <div v-if="note.item">
-                        <img :src="note.item.imageSrc">
+                    <div v-if="note.item" >
+                        <img :src="note.item.imageSrc" style="width:100%" >
                     </div>
                 
                 <router-link :to="'/note/'+note.id"><i class="fas fa-trash-alt"></i></router-link> |

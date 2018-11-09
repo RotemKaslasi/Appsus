@@ -5,7 +5,7 @@ export default {
     template: `
    
     <section class="note-edit" v-bind:style="note.bgc">
-        <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
+        <h1>{{(note.id)? 'Edit Image': 'Add Image'}}</h1>
         <form @submit.prevent="saveNoteImg">
                 <input id="changeTitle" type="text" v-model="note.title" ><br>
                 <textarea id="text-area" placeholder="Enter somthing..." type="text" v-model="note.body" rows="4" cols="30" > 
@@ -16,7 +16,7 @@ export default {
 
             <input type="file" @change="onFileChanged">
            
-            <img :src="note.item.imageSrc" />
+            <img :src="note.item.imageSrc" style="width:100% " />
             <button @click="removeImage">Remove image</button>
             </div> 
 
@@ -31,9 +31,10 @@ export default {
                 bgc: { backgroundColor: '#FFFFFF' },
                 item: {
                     image: false,
-                    imageSrc: null
+                    imageSrc: null,
                 },
-                selectedFile: null
+                selectedFile: null,
+                tasks:[]
             },
         }
     },

@@ -13,4 +13,6 @@ input{
         background-color:transparent;
 }
 
-
+.is-image{
+    max-width: 50%;
+}

@@ -7,19 +7,19 @@ export default {
     <section class="note-edit" v-bind:style="note.bgc">
         <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
         <div v-if="note.tasks.length > 0">
-            <todo-list :tasksList="note.tasks"></todo-list>
+            <todo-list class="edit-list":tasksList="note.tasks" noteId="note.id"></todo-list>
         </div>
         <div v-else>
         <form @submit.prevent="saveNote">
             <input id="changeTitle" type="text" v-model="note.title" ><br>
             <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="30">Enter your note </textarea><br>
 
-            <input type="color" v-model="note.bgc.backgroundColor"/>
+            <input type="color" value="note.bgc.backgroundColor" v-model="note.bgc.backgroundColor"/>
             <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
             
-            <img v-if=note.item :src="note.item.imageSrc"/>
-            <input v-if=note.item type="file" @change="onFileChanged">
-            <button v-if=note.item @click="removeImage">Remove image</button>
+            <img v-if=note.item.image :src="note.item.imageSrc" style="width:100%"/>
+            <input v-if=note.item.image type="file" @change="onFileChanged">
+            <button v-if=note.item.image @click="removeImage">Remove image</button>
         </form>     
         </div>  
     </section>
@@ -30,7 +30,7 @@ export default {
             note: {
                 title: '',
                 body: '',
-                image:false,
+                item:{image:false, imageSrc:null},
                 bgc:{backgroundColor: 'lightyellow'},
                 todoOn: false, 
                 tasks:[]   

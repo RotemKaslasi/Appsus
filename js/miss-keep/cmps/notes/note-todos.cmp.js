@@ -1,14 +1,14 @@
 import noteService from '../../keep-services/note.service.js'
 
 export default {
-    props: ['tasksList'],
+    props: ['tasksList', 'noteId'],
 
     template: `
-     <div class="container" id="todo" :style="note.bgc">
+     <div class="container todo" :style="note.bgc">
 			
-			<section class="panel note-edit">	
+			<section class="panel note-edit" :style="note.bgc">	
 
-				<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected">
+				<label>Select All:<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected" title="test"></label> 
                 <input id="tasks-box" v-model="note.newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
 
                 <button @click="addTask" class="todoBtn">Add task</button>
@@ -19,7 +19,7 @@ export default {
 
 			</section>
 
-			<section class="list"  v-if="tasksList.length">
+			<section class="list"  v-if="tasksList.length" :style="note.bgc">
 				<ul class="list-item">
 
 					<li v-for="task in note.tasks" :class="{done: isChecked(task)}">
@@ -41,6 +41,7 @@ export default {
     data() {
         return {
             note:{
+                id: this.noteId,
                 newTask: "",
                 tasks: this.tasksList,
                 editingTask: {
@@ -93,9 +94,9 @@ export default {
             ];
         },
 
-        selectAll(task) {
+        selectAll() {
             var targetValue = this.areAllSelected ? false : true;
-            for (var i = 0; i < this.tasks.length; i++) {
+            for (var i = 0; i < this.note.tasks.length; i++) {
                 this.note.tasks[i].checked = targetValue;
             }
         },
