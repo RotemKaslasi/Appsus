@@ -5,7 +5,8 @@ export default {
     props: ['note'],
     template: `
             <li class="note-list-container" :style="note.bgc">
-                <div v-if="Array.isArray(note.tasks)" v-for="task in note.tasks">
+             
+                <div v-if="note.tasks.length>0" v-for="task in note.tasks">
                         <h3>{{task.text}}</h3>   
                 </div>
                 <h2>

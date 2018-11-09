@@ -14,8 +14,8 @@ function query(filter = null) {
             console.log('notes: ', notes);
             // console.log('note.title',note.title);
             if (filter === null) return notes;
-            else return notes.filter(note => 
-                            note.title.toUpperCase().includes(filter.byTitle.toUpperCase()))
+            else return notes.filter(note =>
+                note.title.toUpperCase().includes(filter.byTitle.toUpperCase()))
         })
 }
 
@@ -49,13 +49,12 @@ function deleteNote(noteId) {
 function getById(noteId) {
     return storageService.load(KEY)
         .then(notes => {
-            console.log(notes.find(note => note.id === noteId))
             return notes.find(note => note.id === noteId);
         })
 }
 
 function _createInitialNotes() {
-    return [_createInitialNote(), _createInitialNote(), _createInitialNote(), _createInitialNote()];
+    return [_createInitialNote(), _createInitialList(), _createInitialImg()];
 }
 
 
@@ -64,13 +63,44 @@ function _createInitialNote() {
         id: utilService.makeId(),
         title: utilService.makeLorem(3),
         body: utilService.makeLorem(40),
-        item:'',
-        bgc:{backgroundColor: '#FFFFFF'},
-        tasks:[],
-       
-        
-       
+        item: '',
+        bgc: { backgroundColor: randomColors() },
+        tasks: [],
+
     }
+
+}
+
+function  _createInitialList(){
+    return{
+        id: utilService.makeId(),
+        title: '',
+        // body: '',
+        item: '',
+        bgc: { backgroundColor: randomColors() },
+        tasks: [{text:'Go to the mall'}, {text:'Bake cookies'} , {text:'Watch Netflix'}],
+    }
+}
+
+function _createInitialImg(){
+    return{
+        id: utilService.makeId(),
+        title: 'Change netflix avatar, to this: ',
+        body: '',
+        item: {imageSrc: './img/0.jpg'},
+        bgc: { backgroundColor: randomColors() },
+        tasks: [],
+
+    }
+}
+
+
+
+function randomColors() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 
 }
 

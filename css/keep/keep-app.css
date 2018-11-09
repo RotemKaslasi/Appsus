@@ -39,6 +39,31 @@
     justify-content: center;
 }
 
+#search-box{
+    background-color: white;
+    border-radius: 8px;
+    padding: 1%;
+    box-shadow: 0 0 10px black;
+}
+
+.note-filter{
+    margin-right:20px;
+
+}
+
+.search-note-img{
+    height: 40px;
+    width: 40px;
+    padding: 4px;
+}
+
+.app-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 40px;
+}
+
 @media(max-width:500x){
   
     li{

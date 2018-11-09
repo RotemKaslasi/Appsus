@@ -11,13 +11,11 @@ export default {
     template: `
     
     <section class="note-app-container">
-                
+                <div class="app-header">
                 <h1 class="notes-app-title">Notes App</h1>
-                <button class="search-email-btn" @click="searchNote">
-                <img class="search-email-img" src="img/search.png" alt="" srcset="">
-                </button>
-
                 <note-filter @filtered="setFilter" ></note-filter>
+                </div>
+               
                 <div class="btn-control">
                 <button @click="txtChoose" class="newNoteBtn textBtn"><i class="fas fa-align-justify"></i> </button>
                 <button @click="imageChoose" class="newNoteBtn imgBtn"><i class="far fa-image"></i></button>
