@@ -28,8 +28,6 @@
 }
 .email-container.read:hover {
     border: 2px solid rgba(68, 102, 255, 0.863);
-    transform: scaleY(1.1);
-    /* transform: skewX(-180deg); */
 }
 .email-container.un-read{
     background-color: #ee7841bb;
@@ -38,8 +36,6 @@
 }
 .email-container.un-read:hover{
     border: 5px ridge rgb(49, 76, 199);
-    transform: scaleY(1.1);
-
 }
 
 .email-container.read  .email-text{
