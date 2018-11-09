@@ -12,7 +12,7 @@ export default {
     <section class="email-app-container">
         <h1 class="email-top-title">Email App</h1>
         <div class="search-email">
-            <email-filter v-if="isSearchEmail" @set-filter="setFilter"></email-filter>
+            <email-filter :class="searchClass" @set-filter="setFilter"></email-filter>
             <button class="search-email-btn" @click="searchEmail">
                 <img class="search-email-img" src="img/search.png" alt="" srcset="">
             </button>
@@ -60,6 +60,12 @@ export default {
                 .filter(email =>
                     !this.filter.txt || email.subject.toLowerCase().includes(this.filter.txt.toLowerCase()))
 
+        },
+        searchClass() {
+            return {
+                'search-close': !this.isSearchEmail,
+                'search-open': this.isSearchEmail
+            }
         }
     },
     methods: {

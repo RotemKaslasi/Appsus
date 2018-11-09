@@ -125,7 +125,8 @@ header{
     width: 100%;
     background: #170e1796; 
     height: 100vh;
-    position: absolute;   
+    position: absolute;
+    visibility: hidden;   
 }
 
 }
