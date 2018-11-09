@@ -4,12 +4,12 @@ export default {
     props: ['tasksList'],
 
     template: `
-     <div class="container" id="todo">
+     <div class="container" id="todo" :style="note.bgc">
 			
-			<section class="panel">	
+			<section class="panel note-edit">	
 
 				<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected">
-                <input v-model="note.newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
+                <input id="tasks-box" v-model="note.newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
 
                 <button @click="addTask" class="todoBtn">Add task</button>
                 <button @click="clearList" class="todoBtn">Clear List</button>
@@ -45,7 +45,7 @@ export default {
                 tasks: this.tasksList,
                 editingTask: {
                 },
-                bgc:{backgroundColor: ''},
+                bgc:{backgroundColor: 'lightyellow'},
                 data: null
         }}
     },

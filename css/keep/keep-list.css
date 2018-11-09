@@ -1,10 +1,11 @@
 .note-list-container{
-    border: 1px solid black;
+   
     border-radius: 10px;
     list-style-type: none;
     width: fit-content;
     margin: 10px;
     padding: 3px;
+    box-shadow: 5px 5px 10px #232323;
 
 }
 

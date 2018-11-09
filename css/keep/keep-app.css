@@ -12,10 +12,10 @@
     text-shadow: -9px 1px 0px rgba(0,0,0), -15px 0px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
 }
 
-.newNoteBtn{
-    background-color: #9370DB;
+#newNoteBtn{
+    /* background-color: #9370DB; */
     border: none;
-    color: white;
+    color: black;
     padding: 7px 10px;
     text-align: center;
     text-decoration: none;
@@ -26,8 +26,17 @@
    
 }
 
+i{
+    background-color: transparent;
+}
+
 .btn-control{
     text-align: center;
+    background-color: rgb(221, 221, 221);
+    border-radius: 7px 7px 0 0 ;
+    width: 30%;
+    margin: 0 auto;
+   
 }
 
 .newNoteBtn:hover{
@@ -37,6 +46,9 @@
 .note-edit{
     display: grid;
     justify-content: center;
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 0 0 7px 7px;
 }
 
 #search-box{
@@ -64,8 +76,55 @@
     padding: 0 40px;
 }
 
-@media(max-width:500x){
-  
+#todo{
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 0 0 7px 7px;
+
+}
+
+#tasks-box{
+    background-color: white;
+}
+
+/* #cmpMain{
+    transition: all 0.5s;
+} */
+
+@media (max-width:870px){
+    .app-header{
+        display: grid;
+        justify-content: center;
+          
+    }
+    .search-note-img{
+        display: none;
+    }
+
+    #search-box{
+        width: 90%;
+    }
+
+    .btn-control{
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .notes-app-title{
+        font-size: 70px;
+        text-align: center;
+    }
+
+    .note-edit{
+        width:100%;
+    }
+
+    .panel, #todo{
+        width:100%;
+    }
+
+    
+
     li{
         display: flex;
         flex-wrap:wrap;

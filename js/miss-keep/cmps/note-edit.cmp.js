@@ -31,7 +31,7 @@ export default {
                 title: '',
                 body: '',
                 image:false,
-                bgc:{backgroundColor: ''},
+                bgc:{backgroundColor: 'lightyellow'},
                 todoOn: false, 
                 tasks:[]   
                

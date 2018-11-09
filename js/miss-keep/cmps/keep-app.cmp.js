@@ -17,14 +17,14 @@ export default {
                 </div>
                
                 <div class="btn-control">
-                <button @click="txtChoose" class="newNoteBtn textBtn"><i class="fas fa-align-justify"></i> </button>
-                <button @click="imageChoose" class="newNoteBtn imgBtn"><i class="far fa-image"></i></button>
-                <button @click="todoChoose" class="newNoteBtn todoBtn"> <i class="fas fa-check-square"></i></button>
+                <button @click="txtChoose" id="newNoteBtn"><i class="far fa-sticky-note"></i> </button>
+                <button @click="imageChoose" id="newNoteBtn"><i class="far fa-image"></i></button>
+                <button @click="todoChoose" id="newNoteBtn"><i class="fas fa-check-square"></i></button>
                 </div>
 
                 
 
-                <component v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" @newNoteAdded="loadNotes"></component> 
+                <component  v-show="toToggle" v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" @newNoteAdded="loadNotes"></component> 
               
      
             <note-list :notes="notes"></note-list>
@@ -42,12 +42,14 @@ export default {
                 image: false
             },
             nameCmp: null,
-            tasks:[],
+            tasks: [],
+            toToggle: true,
+
             // isSearchNote=false
         }
     },
     methods: {
-        loadNotes() {            
+        loadNotes() {
             servicesNote.query().then(notes => {
                 this.notes = notes;
             })
@@ -62,20 +64,21 @@ export default {
             this.loadNotes();
         },
         txtChoose() {
-            this.nameCmp = 'noteEdit';
-                  
+            if(this.nameCmp === 'noteEdit') this.toToggle = !this.toToggle;
+            else this.nameCmp = 'noteEdit';
         },
         imageChoose() {
-            this.nameCmp = 'noteImg';
+            if(this.nameCmp === 'noteImg') this.toToggle = !this.toToggle;
+            else this.nameCmp = 'noteImg';
+            
         },
         todoChoose() {
-            this.nameCmp = 'noteTodo';
-          
+            if(this.nameCmp === 'noteTodo') this.toToggle = !this.toToggle;
+            else this.nameCmp = 'noteTodo';
+                
+
         },
-        searchNote() {
-            this.isSearchNote = !this.isSearchNote;
-        },
-    
+
 
 
 
