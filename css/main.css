@@ -2,6 +2,8 @@
 @import 'base.css';
 @import 'header.css';
 @import 'home-page.css';
+@import 'about-page.css';
+
 
 /* email */
 @import 'email/email-app.css';

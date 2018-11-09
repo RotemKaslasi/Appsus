@@ -5,11 +5,13 @@ import busService, { USR_MSG_DISPLAY } from '../../../services/event-bus.service
 export default {
 
     template: `
-        <section class="note-details-container" v-if="note">
-        <div v-if="note.tasks.length>0" v-for="task in note.tasks" >      
-                <h3>{{task.text}}</h3> 
+        <section class="note-details-container" v-if="note" >
+            <h1 class="question-delete" >Are you sure you want to <br>
+        <strong>DELETE</strong> this note? </h1>
+        <div v-if="note.tasks.length>0" :style="note.bgc"  class="list-details">      
+                <h3 v-for="task in note.tasks">{{task.text}}</h3> 
         </div>
-        <div  v-if="note.tasks.length === 0" class="note-details" :style="note.bgc">
+        <div  v-if="note.tasks.length === 0" class="note-details" :style="note.bgc" >
                 <h1>{{note.title}}</h1>
                 <h4>{{note.body}}</h4>
 
