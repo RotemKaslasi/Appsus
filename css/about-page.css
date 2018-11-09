@@ -1,0 +1,94 @@
+#rotem-img{
+border-radius: 50%;
+width:210px;
+box-shadow: 5px 5px 10px
+}
+
+#or-img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    border-radius: 50%;
+    width:210px;
+    box-shadow: 5px 5px 10px
+}
+
+.staff-container{
+    width:40%;
+    text-align: center;
+    background-color: rgb(192, 189, 189);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #232323;
+    font-family: noto;
+
+}
+
+.about-name{
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.about-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.about-title{
+    font-family:guy;
+    font-size: 3.5rem;
+    text-align: center;
+    padding:30px;
+}
+
+/* img-wiggle */
+#or-img:hover {
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+  }
+  
+  @-webkit-keyframes wiggle {
+    0% {-webkit-transform: rotate(10deg);}
+    25% {-webkit-transform: rotate(-10deg);}
+    50% {-webkit-transform: rotate(20deg);}
+    75% {-webkit-transform: rotate(-5deg);}
+    100% {-webkit-transform: rotate(0deg);}
+  }
+
+  #rotem-img:hover {
+    -webkit-animation-name: wiggle;
+    -ms-animation-name: wiggle;
+    -ms-animation-duration: 1000ms;
+    -webkit-animation-duration: 1000ms;
+    -webkit-animation-iteration-count: 1;
+    -ms-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+    -ms-animation-timing-function: ease-in-out;
+  }
+  
+  @-webkit-keyframes wiggle {
+    0% {-webkit-transform: rotate(10deg);}
+    25% {-webkit-transform: rotate(-10deg);}
+    50% {-webkit-transform: rotate(20deg);}
+    75% {-webkit-transform: rotate(-5deg);}
+    100% {-webkit-transform: rotate(0deg);}
+  }
+
+
+  @media (max-width:768px) {
+    .about-container{  
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+    }
+
+    .staff-container{
+        width:80%;
+        margin: 0 auto;
+   
+    }
+  }
