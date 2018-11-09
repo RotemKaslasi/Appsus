@@ -11,17 +11,24 @@ export default {
         <div  class="about-container">
             <div class="staff-container">
                     <h3 class="about-name">Or Bracha</h3>
+<<<<<<< HEAD
                     <img class="img-id" id="or-img" src="../img/or-img2.jpg">
                     <p> 23 years old, from Kfar-Yona.<br>
                         My favorite Disney movies are "The Lion-King" and "Aladin".
                         <br>My motto is: 
                         "Go Hard Or Go Home!"
                     </p>
+=======
+                    <img class="img-id" id="or-img" src="./img/or-img2.jpg">
+                    <p> text text text text text text text text text text 
+                    text text text text text text text text text text text 
+                    </p> 
+>>>>>>> 2a3adc9c120436846957ee00bce40ac80d6859b9
                 </div>
 
                 <div class="staff-container">
                 <h3 class="about-name">Rotem Kaslasi</h3>   
-                    <img class="img-id" id="rotem-img" src ="../img/rotem-img.jpg">
+                    <img class="img-id" id="rotem-img" src ="./img/rotem-img.jpg">
                     <p> 26 years old, from Ashdod.<br>
                         My favorite Disney movies are "The Lion-King" and "Frozen".
                         <br>My motto is: 
