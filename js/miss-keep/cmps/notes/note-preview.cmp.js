@@ -19,7 +19,7 @@ export default {
                         <img :src="note.item.imageSrc">
                     </div>
                 
-                <router-link :to="'/note/'+note.id">Details</router-link> |
+                <router-link :to="'/note/'+note.id"><i class="fas fa-trash-alt"></i></router-link> |
                 <router-link :to="'/note/edit/'+note.id">Edit</router-link>
             </li> 
     

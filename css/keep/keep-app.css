@@ -113,6 +113,8 @@ i{
     .notes-app-title{
         font-size: 70px;
         text-align: center;
+        text-shadow: 7px 5px 10px black
+       
     }
 
     .note-edit{

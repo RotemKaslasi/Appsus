@@ -61,8 +61,8 @@ function _createInitialNotes() {
 function _createInitialNote() {
     return {
         id: utilService.makeId(),
-        title: utilService.makeLorem(3),
-        body: utilService.makeLorem(40),
+        title: 'Make this site responsive',
+        body: 'use @media',
         item: '',
         bgc: { backgroundColor: randomColors() },
         tasks: [],

@@ -22,7 +22,10 @@
     padding: 5px;
     margin: 2px;
     
+}
 
+li {
+    font-family: ubuntu;
 }
 
 
