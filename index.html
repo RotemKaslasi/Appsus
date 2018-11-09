@@ -19,7 +19,7 @@
     <div id="app">
         <header>
             <div class="logo-container">
-                <img id="app-icon" src="img/icon app.png" alt="" srcset="">
+                <!-- <img id="app-icon" src="img/icon app.png" alt="" srcset=""> -->
                 <h1 class="head-title">AppSus</h1>
             </div>
             <img class="hum-icon" src="img/Hamburger_icon.png" :class="toggleMenu" @click="openMenu" alt="">
@@ -28,7 +28,7 @@
                     <router-link @click="closeMenu" exact to="/">Home</router-link>
                     <router-link @click="closeMenu" exact to="/email">Email</router-link>
                     <router-link @click="closeMenu" exact to="/keep">Keep Note</router-link>
-                    <router-link @click="closeMenu" exact to="/">About</router-link>
+                    <router-link @click="closeMenu" exact to="/about">About</router-link>
                 </nav>
             </div>
         </header>

@@ -23,10 +23,6 @@
 .email-app-container{
     font-size: 1.5em;
     }    
-.edit-email-container{
-    /* width: 100vw;
-    flex-direction: column; */
-}
 }
 .add-email-btn{
     border-radius: 50px;
