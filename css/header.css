@@ -8,7 +8,7 @@ header {
 
 .head-title{
     font-family: kumar;
-    font-size: 70px
+    font-size: 6vw;
 }
 .logo-container{
     display: flex;
@@ -32,7 +32,6 @@ header {
     padding: 30px;
     width: 100px;
     height: 100px;
-    /* border-right: #170e17 solid; */
 }
 .nav-bar a:hover{
     box-shadow: 0px 9px 3px black;
@@ -59,7 +58,7 @@ header{
     justify-content: space-between;
 }
 .nav-bar{
-        display: none;
+    visibility: hidden;
 }
 .hum-icon{
     display: block;
@@ -81,9 +80,9 @@ header{
     width: 60%;
     margin-left: 100%;
     visibility: hidden;
-    display: block;
     background-color: #854463eb;
     height: 100vh;
+    transition: .8s;
 }
 
 .nav-bar.open{
@@ -91,13 +90,17 @@ header{
     width: 60%;
     visibility: visible;
     margin-left: 40%;
-    /* float: right; */
-    display: block;
     background-color: #854463eb;
     height: 100vh;
     transition: .8s;
 }
 .nav-bar.open a{
+    text-align: center;
+    float: unset;
+    display: block;
+    width: 100%;
+}
+.nav-bar.close a{
     text-align: center;
     float: unset;
     display: block;
@@ -109,7 +112,16 @@ header{
     z-index: 1;
     top:116px;
     right: 0;
-    grid-column: 3;
+    width: 100%;
+    background: #170e1796; 
+    height: 100vh;
+    position: absolute;   
+}
+.menu.close{
+    overflow: hidden;
+    z-index: 1;
+    top:116px;
+    right: 0;
     width: 100%;
     background: #170e1796; 
     height: 100vh;
