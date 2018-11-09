@@ -5,9 +5,11 @@
     height: 100%;
     top:116px;
     font-family: noto;
+    overflow: auto;
 }
 
 .new-email-container{
+    
     text-align: center;
     width: 90%;
     border: 8px ridge rgb(230, 137, 137);
