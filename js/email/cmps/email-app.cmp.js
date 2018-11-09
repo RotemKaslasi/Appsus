@@ -22,7 +22,7 @@ export default {
             </button>
             <div class="edit-email-container">
                 <email-list  :emails="emailsForDisplay"></email-list>
-                <email-compose  v-if="isAddEmail" @save-email="saveEmail"></email-compose>
+                <email-compose  v-if="isAddEmail" @save-email="saveEmail" @close-new="closeNew"></email-compose>
             </div>
             <email-status :status="status"></email-status>            
 
@@ -96,6 +96,9 @@ export default {
             servicesEmail.saveEmail(newEmail).then(() => {
                 this.loadEmails()
             })
+        },
+        closeNew() {
+            this.isAddEmail = false;
         }
     },
     created() {
