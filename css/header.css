@@ -11,6 +11,13 @@ header {
     font-size: 3.5em;
     margin-left: 20px;
 }
+
+@media(max-width:400px){
+.head-title{
+    font-size: 2.5em;
+    }
+}
+
 .logo-container{
     display: flex;
     align-items: center;
