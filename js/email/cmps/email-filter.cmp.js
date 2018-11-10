@@ -17,8 +17,7 @@ export default {
         return {
             filter: {
                 txt: null,
-                emailStatus: 'all'
-
+                emailStatus: 'all',
             }
         }
     },
