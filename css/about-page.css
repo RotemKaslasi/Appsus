@@ -31,8 +31,14 @@ box-shadow: 5px 5px 10px
     line-height: 50px;
     text-align: center;
     transform:translateX(100%);
-    animation: moveDiv 15s linear infinite;
+    animation: moveDiv 30s linear infinite;
     letter-spacing: 5px;
+}
+
+@media(max-width:800px){
+.horse-move .move-div{
+    animation: moveDiv 10s linear infinite;
+}
 }
 
 .run-horse{
@@ -58,6 +64,7 @@ box-shadow: 5px 5px 10px
     border-radius: 10px;
     box-shadow: 0 0 10px #232323;
     font-family: noto;
+    padding: 10px;
 }
 
 .about-name{

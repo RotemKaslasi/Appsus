@@ -15,7 +15,7 @@
 
 @media(max-width:800px){
 .email-app-container{
-    font-size: 1.5em;
+    font-size: 20px;
     }    
 }
 .add-email-btn{
@@ -54,9 +54,7 @@
     padding: 4px;
 }
 
-.filter-for-mobile{
-    display: none;
-}
+
 @media(max-width:950px){
 .search-email{
     position: initial;
