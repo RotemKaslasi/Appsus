@@ -31,6 +31,7 @@ function saveNote(note) {
                 // Add
                 note.id = utilService.makeId();
                 notes.push(note);
+                console.log(note);
             }
             return storageService.store(KEY, notes);
         });
@@ -54,7 +55,7 @@ function getById(noteId) {
 }
 
 function _createInitialNotes() {
-    return [_createInitialNote(), _createInitialList(), _createInitialImg()];
+    return [_createInitialList(),_createInitialNote(), _createInitialImg()];
 }
 
 

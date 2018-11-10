@@ -16,3 +16,7 @@ input{
 .is-image{
     max-width: 50%;
 }
+
+.pined-note{
+    color:red;
+}

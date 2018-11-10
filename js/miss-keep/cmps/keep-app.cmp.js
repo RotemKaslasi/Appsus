@@ -25,9 +25,9 @@ export default {
                 
 
                 <component  v-show="toToggle" v-if="nameCmp" :tasksList="tasks" :is="nameCmp" @save="saveNote" @newNoteAdded="loadNotes"></component> 
-              
+                                      
      
-            <note-list :notes="notes"></note-list>
+            <note-list :notes="notes" ></note-list>
             
     </section>
     `,

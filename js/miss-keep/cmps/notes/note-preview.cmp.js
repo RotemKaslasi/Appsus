@@ -5,7 +5,7 @@ export default {
     props: ['note'],
     template: `
             <li class="note-list-container" :style="note.bgc" :class="{'is-image': note.item}" >
-             <i class="fas fa-thumbtack" id="pin-btn"></i>
+            <i class="fas fa-thumbtack no-show" :class="{'pin-btn': note.isPined}"></i>
                 <div v-if="note.tasks.length>0" v-for="task in note.tasks">
                         <h3>{{task.text}}</h3>   
                 </div>

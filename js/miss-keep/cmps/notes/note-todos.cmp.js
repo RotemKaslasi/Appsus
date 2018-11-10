@@ -1,13 +1,12 @@
 import noteService from '../../keep-services/note.service.js'
 
 export default {
-    props: ['tasksList', 'noteId'],
+    props: ['tasksList', 'noteId', 'pined'],
 
     template: `
      <div class="container todo" :style="note.bgc">
-			
+     <button  class="to-pin-btn"  @click="setPin" :class="{'pined-note': note.isPined}"><i class="fas fa-thumbtack "></i></button>
 			<section class="panel note-edit" :style="note.bgc">	
-
 				<label>Select All:<input type="checkbox" id="mark-all" @click="selectAll" :checked="areAllSelected" title="test"></label> 
                 <input id="tasks-box" v-model="note.newTask" @keyup.enter="addTask" placeholder="What do you need to do?" autofocus class="text-input" onsubmit="return false">
 
@@ -44,10 +43,9 @@ export default {
                 id: this.noteId,
                 newTask: "",
                 tasks: this.tasksList,
-                editingTask: {
-                },
+                editingTask: {},
                 bgc:{backgroundColor: 'lightyellow'},
-                isPined: false
+                isPined: this.pined
         }}
     },
 
@@ -110,13 +108,17 @@ export default {
         },
 
         saveNote() {
-            // console.log(this.note);
+            console.log(this.note);
             noteService.saveNote(this.note)
                 .then(() => {
                     console.log('Saved!');
                     this.$emit('newNoteAdded');
                     this.$router.push('/keep');
                 })
+        },
+        setPin(){
+            this.note.isPined = !this.note.isPined;
+            console.log ('is pined' , this.note.isPined)
         }
 
 

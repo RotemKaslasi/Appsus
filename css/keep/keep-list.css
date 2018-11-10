@@ -41,11 +41,18 @@ li {
     transition: all 0.2s;
 }
 
-#pin-btn{
+.no-show{
     display: none;
     width: 100%;
     margin-left: 95%;
 }
+
+.pin-btn{
+    display: block;
+    width: 100%;
+    margin-left: 95%;
+}
+
 
 @media (max-width: 700px) {
     .notes-list{

@@ -5,12 +5,14 @@ import todoList from '../cmps/notes/note-todos.cmp.js'
 export default {
     template: `
     <section class="note-edit" v-bind:style="note.bgc">
-        <button class="to-pin-btn"  @click="setPin"><i class="fas fa-thumbtack "></i></button>
+
+       
         <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
         <div v-if="note.tasks.length > 0">
-            <todo-list class="edit-list":tasksList="note.tasks" noteId="note.id"></todo-list>
+            <todo-list class="edit-list":tasksList="note.tasks" :noteId="note.id" :pined="note.isPined"></todo-list>
         </div>
         <div v-else>
+        <button  class="to-pin-btn"  @click="setPin" :class="{'pined-note': note.isPined}"><i class="fas fa-thumbtack "></i></button>
         <form @submit.prevent="saveNote">
             <input id="changeTitle" type="text" v-model="note.title" ><br>
             <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="30">Enter your note </textarea><br>
@@ -93,7 +95,8 @@ export default {
             this.note.item =''; 
         },
         setPin(){
-            this.isPined = !this.isPined;
+            this.note.isPined = !this.note.isPined;
+            console.log ('is pined' , this.note.isPined)
         }
     },
     components:{
