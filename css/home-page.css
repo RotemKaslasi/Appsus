@@ -14,28 +14,28 @@
 }
 
 .email-link ,.keep-link{
-    margin-top:20px;
-    /* border-radius: 50%; */
+    margin-top:40px;
     padding: 0;
     border: unset;
     cursor: pointer;
     background: unset;
     margin-bottom: 10px;
+    margin-left: 20px;
+    transition: .8s;
 }
 .email-link img ,.keep-link img{
     height: 200px;
     width: 200px;
 }
-/* .keep-link img{
-    height: 100px;
-    width: 100px;
+.email-link h1 ,.keep-link h1{
+    margin: 0;
+    font-family: noto;
+    font-weight: 900;
+    font-size: 20px;
 }
-.keep-link{
-    height: 100px;
-    width: 100px;
-} */
+
 .email-link:hover ,.keep-link:hover{
-    /* transform: skew(20deg,180deg) */
+    transform: scale(1.2,1.2)
 }
 
 @media(max-width:600px){

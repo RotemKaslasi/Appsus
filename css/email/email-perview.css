@@ -42,7 +42,10 @@
     font-weight: unset;
 }
 .email-container.un-read .email-text{
-    font-weight: bolder;
+    font-weight: 900;
+}
+.email-container.un-read .email-text h1{
+    font-weight: 900;
 }
 
 .delete-email-btn{

@@ -12,6 +12,29 @@
     text-shadow: -9px 1px 0px rgba(0,0,0), -15px 0px 0px rgba(0,0,0), -1px 3px 20px rgba(255, 255, 255, 0.671), 0px 8px 0px rgba(0,0,0,0.15)
 }
 
+.sort-emails{
+    cursor: pointer;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: rgba(138, 68, 102, 0.85);
+    width: fit-content;
+    font-size: 20px;
+    font-family: noto;
+}
+.sort-emails option:hover{
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+.sort-emails:focus{
+    outline: none;
+}
+.sort-emails option:active{
+    outline: none;
+}
 
 @media(max-width:800px){
 .email-app-container{

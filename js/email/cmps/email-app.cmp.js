@@ -11,6 +11,10 @@ export default {
     template: `
     <section class="email-app-container">
         <h1 class="email-top-title">Email App</h1>
+        <select class="sort-emails" @change="sortEmails" v-model="sortBy">
+            <option value="date">Date</option>
+            <option value="title">Title</option>
+        </select>
         <div class="search-email">
             <email-filter :class="searchClass" @set-filter="setFilter"></email-filter>
             <button class="search-email-btn" @click="searchEmail">
@@ -25,7 +29,6 @@ export default {
                 <email-compose  v-if="isAddEmail" @save-email="saveEmail" @close-new="closeNew"></email-compose>
             </div>
             <email-status :status="status"></email-status>            
-
     </section>
     `,
     data() {
@@ -37,7 +40,8 @@ export default {
                 emailStatus: 'all'
             },
             isAddEmail: false,
-            isSearchEmail: false
+            isSearchEmail: false,
+            sortBy: 'date'
         }
     },
     computed: {
@@ -98,7 +102,22 @@ export default {
         },
         closeNew() {
             this.isAddEmail = false;
-        }
+        },
+        sortEmails() {
+            console.log(this.sortBy);
+            if (this.sortBy === 'date') this.emails.sort(this.sortByDate);
+            else this.emails.sort(this.sortByTitle);
+        },
+        sortByDate(emailA, emailB) {
+            return emailB.sendAt - emailA.sendAt
+        },
+        sortByTitle(emailA, emailB) {
+            if (emailA.subject < emailB.subject)
+                return -1;
+            if (emailA.subject > emailB.subject)
+                return 1;
+            return 0;
+        },
     },
     created() {
         this.loadEmails()
@@ -109,6 +128,7 @@ export default {
             })
         })
         this.loadStatus();
+        this.sortEmails();
     },
     components: {
         emailList,

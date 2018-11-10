@@ -1,7 +1,7 @@
 export default {
     template: `
     <section>
-        <h1 class ="about-title">ABOUT US</h1>
+        <br>
          <div class="horse-move">
             <div class="move-div">
                 <img class="run-horse" src="img/run.gif" alt="">
@@ -13,8 +13,7 @@ export default {
                     <h3 class="about-name">Or Bracha</h3>
                     <img class="img-id" id="or-img" src="img/or-img2.jpg">
                     <p> 23 years old, from Kfar-Yona.<br>
-                        My favorite Disney movies are "The Lion-King" and "Aladin".
-                        <br>My motto is: 
+                        <br>Moto- 
                         "Go Hard Or Go Home!"
                     </p>
                 </div>
@@ -23,8 +22,7 @@ export default {
                 <h3 class="about-name">Rotem Kaslasi</h3>   
                     <img class="img-id" id="rotem-img" src ="img/rotem-img.jpg">
                     <p> 26 years old, from Ashdod.<br>
-                        My favorite Disney movies are "The Lion-King" and "Frozen".
-                        <br>My motto is: 
+                        <br>Moto-
                         "When things gets hard, eat cakes"
                     </p>
                 </div>
