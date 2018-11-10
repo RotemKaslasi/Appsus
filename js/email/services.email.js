@@ -50,7 +50,7 @@ function saveEmail(email) {
                 email.id = utilService.makeId();
                 email.sendAt = Date.now();
                 email.isRead = false;
-                emails.push(email);
+                emails.unshift(email);
             }
             return storageService.store(KEY, emails);
         });

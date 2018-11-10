@@ -66,13 +66,12 @@ export default {
                 'search-close': !this.isSearchEmail,
                 'search-open': this.isSearchEmail
             }
-        }
+        },
     },
     methods: {
-        getStatus() {
+        loadStatus() {
             servicesEmail.getEmailStatus().then(status => {
                 this.status = status;
-                console.log(this.status)
             })
         },
         loadEmails() {
@@ -81,7 +80,6 @@ export default {
             })
         },
         setFilter(filter) {
-            console.log('filter', this.filter)
             this.filter = filter;
         },
         addEmail() {
@@ -94,7 +92,8 @@ export default {
             this.isAddEmail = false;
             console.log(newEmail)
             servicesEmail.saveEmail(newEmail).then(() => {
-                this.loadEmails()
+                this.loadEmails();
+                this.loadStatus();
             })
         },
         closeNew() {
@@ -103,13 +102,13 @@ export default {
     },
     created() {
         this.loadEmails()
-        this.getStatus()
         eventBus.$on(DELETED_EMAIL, (email) => {
             servicesEmail.deleteEmail(email.id).then(() => {
-                this.loadEmails()
+                this.loadEmails();
+                this.loadStatus();
             })
         })
-
+        this.loadStatus();
     },
     components: {
         emailList,

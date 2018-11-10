@@ -7,6 +7,7 @@ export default {
         <h1>{{numOfReading()}} is reading</h1>
             <div class="status" :style="{width: getStatus()}">
             </div>
+            <pre>{{numOfReading()}}</pre>
         </section>
     `,
     methods: {
