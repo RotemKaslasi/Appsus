@@ -1,16 +1,23 @@
 'use strict'
-import eventBus, { EMAIL_SELECTED } from '../../services/event-bus.service.js'
 import emailService from '../services.email.js'
 
 export default {
     template: `
     <section class="details-container" v-if="email">
-        <h1 class="to-details">{{email.to}}</h1> 
-        <h1 class="from-details">{{email.from}}</h1> 
         <h1 class="subject-details">{{email.subject}}</h1> 
-        <p>{{new Date(email.sendAt).toGMTString()}}</p>
-        <p>{{email.body}}</p>
-        <button @click="backToList">back</button>
+        <div class="details-info">
+            <p class="to-details">
+                <span>To</span>
+                {{email.to}}
+            </p> 
+            <p class="from-details">
+                <span>From</span>
+                {{email.from}}
+            </p> 
+            <p class="time-details"> <span>At</span> {{new Date(email.sendAt).toGMTString()}}</p>
+        </div>
+        <p class="body-details">{{email.body}}</p>
+        <button @click="backToList" class="close-details-btn"><i class="fas fa-angle-right"></i></button>
     </section>
     `,
     data() {

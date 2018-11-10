@@ -6,7 +6,7 @@
     padding: 10px;
     border-radius: 10px;
     align-items: center;
-    background-color: rgba(168, 88, 22, 0.63);
+    background-color: rgba(138, 68, 102, 0.85);
 }
 .fliter-container.search-close{
     display: none;
@@ -43,7 +43,7 @@
         border: 3px solid;
         padding: 10px;
         border-radius: 10px;
-        background-color: rgba(168, 88, 22, 0.63);
+        background-color: rgba(138, 68, 102, 0.85);
         display:block;
         margin: 0 auto;
         width: 80%;

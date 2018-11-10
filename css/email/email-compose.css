@@ -48,6 +48,7 @@
     margin-left: 5%;
     margin-top: 10px;
     padding: 10px;
+    background-color: white;
 }
 .add-textarea{
     width: 90%;
@@ -72,14 +73,15 @@
     border: 2px solid rgb(230, 137, 137);
     background: white;
     transition: .5s;
+    margin-top: 10px;
 }
 .send-add-btn{
     cursor: no-drop;
     font-family: noto;
     padding: 10px;
     border-radius: 5px;
-    border: 2px solid rgb(230, 137, 137);
-    background: white;
+    border: 2px solid rgba(0, 0, 0, 0.541);
+    margin-top: 10px;
 }
 .send-add-btn.valid-send:hover{
     border: 2px solid white

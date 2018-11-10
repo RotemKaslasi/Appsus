@@ -8,7 +8,8 @@ header {
 
 .head-title{
     font-family: kumar;
-    font-size: 6vw;
+    font-size: 3.5em;
+    margin-left: 20px;
 }
 .logo-container{
     display: flex;
