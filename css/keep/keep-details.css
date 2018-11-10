@@ -28,3 +28,20 @@
     
     
 }
+
+.delete-note-btn, .back-btn, .add-save{
+    padding:10px;
+    background: rgb(94, 87, 87);
+    color:white;
+    cursor: pointer;
+    margin: 10px;
+    border: 0;
+    border-radius: 10px;
+
+}
+
+.delete-note-btn:hover, .back-btn:hover, .add-save:hover{
+    background: rgb(56, 51, 51)
+}
+
+

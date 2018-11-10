@@ -19,8 +19,8 @@ export default {
                     <img :src="note.item.imageSrc">
                 </div>
         </div>
-                <button @click="deleteNote">Delete</button>
-                <button @click="goBack">Go Back</button>
+                <button @click="deleteNote" class="delete-note-btn">Delete</button>
+                <button @click="goBack" class="back-btn">Go Back</button>
         </section>
     `,
     data() {

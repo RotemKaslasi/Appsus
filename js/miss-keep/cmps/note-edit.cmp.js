@@ -18,7 +18,7 @@ export default {
             <textarea id="text-area" type="text" v-model="note.body" rows="4" cols="30">Enter your note </textarea><br>
 
             <input type="color" value="note.bgc.backgroundColor" v-model="note.bgc.backgroundColor"/>
-            <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
+            <button type="submit" class="add-save" > {{(note.id)? 'Save': 'Add'}}</button>
             
             <img v-if=note.item.image :src="note.item.imageSrc" style="width:100%"/>
             <input v-if=note.item.image type="file" @change="onFileChanged">

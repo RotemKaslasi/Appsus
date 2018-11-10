@@ -12,13 +12,13 @@ export default {
                 <textarea id="text-area" placeholder="Enter somthing..." type="text" v-model="note.body" rows="4" cols="30" > 
                 </textarea><br>
                 <input type="color" v-model="note.bgc.backgroundColor"/>
-                <button type="submit" > {{(note.id)? 'Save': 'Add'}}</button>
+                <button type="submit" class="img-btn" > {{(note.id)? 'Save': 'Add'}}</button>
         </form>
 
             <input type="file" @change="onFileChanged">
            
             <img :src="note.item.imageSrc" style="width:100% " />
-            <button @click="removeImage">Remove image</button>
+            <button @click="removeImage" class="img-btn">Remove image</button>
             </div> 
 
     </section>

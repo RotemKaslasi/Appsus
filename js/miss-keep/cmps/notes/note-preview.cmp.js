@@ -6,8 +6,8 @@ export default {
     template: `
             <li class="note-list-container" :style="note.bgc" :class="{'is-image': note.item}" >
             <i class="fas fa-thumbtack no-show" :class="{'pin-btn': note.isPined}"></i>
-                <div v-if="note.tasks.length>0" v-for="task in note.tasks">
-                        <h3>{{task.text}}</h3>   
+                <div v-if="note.tasks.length>0" v-for="task in note.tasks" class="tasks-break-line">
+                        <h3><li>{{task.text}}</li></h3><br>   
                 </div>
                 <h2>
                     <router-link :to="noteDetailsLink">{{note.title}}</router-link>
