@@ -54,7 +54,7 @@ i{
 #search-box{
     background-color: white;
     border-radius: 8px;
-    padding: 1%;
+    padding: 2% 1%;
     box-shadow: 0 0 10px black;
 }
 
@@ -91,6 +91,14 @@ i{
     width:100%;
 }
 
+#pinned-note{
+    color:white;
+}
+
+.to-pin-btn{
+    margin-left: 90%;
+}
+
 /* #cmpMain{
     transition: all 0.5s;
 } */
@@ -106,7 +114,8 @@ i{
     }
 
     #search-box{
-        width: 90%;
+        width: 108%;
+        padding: 3%;
     }
 
     .btn-control{

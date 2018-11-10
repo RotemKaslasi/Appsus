@@ -5,6 +5,7 @@ import todoList from '../cmps/notes/note-todos.cmp.js'
 export default {
     template: `
     <section class="note-edit" v-bind:style="note.bgc">
+        <button class="to-pin-btn"  @click="setPin"><i class="fas fa-thumbtack "></i></button>
         <h1>{{(note.id)? 'Edit Note': 'Add Note'}}</h1>
         <div v-if="note.tasks.length > 0">
             <todo-list class="edit-list":tasksList="note.tasks" noteId="note.id"></todo-list>
@@ -33,8 +34,8 @@ export default {
                 item:{image:false, imageSrc:null},
                 bgc:{backgroundColor: 'lightyellow'},
                 todoOn: false, 
-                tasks:[]   
-               
+                tasks:[],
+                isPined: false                 
             },
         
         }
@@ -85,16 +86,15 @@ export default {
             noteService.saveNote(this.note)
             .then(() => {
                 console.log('Saved!');
-                this.$emit('save', this.note)
-               
-            })
-            
+                this.$emit('save', this.note) 
+            })      
         },
-
         removeImage(){
-            this.note.item ='';
-           
+            this.note.item =''; 
         },
+        setPin(){
+            this.isPined = !this.isPined;
+        }
     },
     components:{
         noteImg,

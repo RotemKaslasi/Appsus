@@ -66,6 +66,7 @@ function _createInitialNote() {
         item: '',
         bgc: { backgroundColor: randomColors() },
         tasks: [],
+        isPinned: false
 
     }
 
@@ -79,6 +80,7 @@ function  _createInitialList(){
         item: '',
         bgc: { backgroundColor: randomColors() },
         tasks: [{text:'Go to the mall'}, {text:'Bake cookies'} , {text:'Watch Netflix'}],
+        isPinned: false
     }
 }
 
@@ -90,6 +92,7 @@ function _createInitialImg(){
         item: {imageSrc: './img/0.jpg'},
         bgc: { backgroundColor: randomColors() },
         tasks: [],
+        isPined: false
 
     }
 }

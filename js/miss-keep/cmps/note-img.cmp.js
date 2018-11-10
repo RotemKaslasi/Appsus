@@ -34,7 +34,9 @@ export default {
                     imageSrc: null,
                 },
                 selectedFile: null,
-                tasks:[]
+                tasks:[],
+                isPined: false
+                
             },
         }
     },

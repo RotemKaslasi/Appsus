@@ -47,7 +47,7 @@ export default {
                 editingTask: {
                 },
                 bgc:{backgroundColor: 'lightyellow'},
-                data: null
+                isPined: false
         }}
     },
 

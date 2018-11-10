@@ -5,7 +5,7 @@ export default {
     props: ['note'],
     template: `
             <li class="note-list-container" :style="note.bgc" :class="{'is-image': note.item}" >
-             
+             <i class="fas fa-thumbtack" id="pin-btn"></i>
                 <div v-if="note.tasks.length>0" v-for="task in note.tasks">
                         <h3>{{task.text}}</h3>   
                 </div>
@@ -17,9 +17,10 @@ export default {
                     <div v-if="note.item" >
                         <img :src="note.item.imageSrc" style="width:100%" >
                     </div>
-                
-                <router-link :to="'/note/'+note.id"><i class="fas fa-trash-alt"></i></router-link> |
-                <router-link :to="'/note/edit/'+note.id">Edit</router-link>
+                <div class="note-options-btns">
+                    <router-link :to="'/note/'+note.id"><i class="fas fa-trash-alt" id="trash-btn"></i></router-link> |
+                    <router-link :to="'/note/edit/'+note.id"><i class="far fa-edit" id="edit-btn"></i></router-link>
+               </div>
             </li> 
     
     `,

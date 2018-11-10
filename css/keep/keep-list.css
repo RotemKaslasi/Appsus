@@ -4,7 +4,7 @@
     list-style-type: none;
     width: fit-content;
     margin: 10px;
-    padding: 3px;
+    padding: 10px;
     box-shadow: 5px 5px 10px #232323;
 
 }
@@ -29,9 +29,33 @@ li {
 }
 
 
+.note-options-btns{
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+#trash-btn:hover, #edit-btn:hover{
+    color:white;
+    text-shadow:2px 2px 5px black; 
+    transition: all 0.2s;
+}
+
+#pin-btn{
+    display: none;
+    width: 100%;
+    margin-left: 95%;
+}
 
 @media (max-width: 700px) {
     .notes-list{
       flex-wrap:wrap;
     }
+
+    
+.note-options-btns{
+    margin-top: 20px;
+    text-align: center;
+}
+
   }
